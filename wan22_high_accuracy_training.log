@@ -117,3 +117,47 @@ You set `add_prefix_space`. The tokenizer needs to be converted from the slow to
 Loading UMT5EncoderModel
 Using ai-toolkit/umt5_xxl_encoder for UMT5 encoder.
 Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 184.51it/s]
+Quantizing UMT5EncoderModel
+Moving transformer back to GPU
+Loading VAE
+Making pipe
+Preparing Model
+create LoRA network. base dim (rank): 64, alpha: 64
+neuron dropout: p=None, rank dropout: p=None, module dropout: p=None
+create LoRA for Text Encoder: 0 modules.
+create LoRA for U-Net: 800 modules.
+enable LoRA for U-Net
+Dataset: /data/kyana-images/dataset
+  -  Preprocessing image dimensions
+  0%|          | 0/756 [00:00<?, ?it/s]100%|██████████| 756/756 [00:00<00:00, 77457.89it/s]
+  -  Found 756 images
+Bucket sizes for /data/kyana-images/dataset:
+1024x1024: 756 files
+1 buckets made
+Caching text_embeddings for /data/kyana-images/dataset
+ - Saving text embeddings to disk
+Caching text embeddings to disk:   0%|          | 0/756 [00:00<?, ?it/s]Caching text embeddings to disk: 100%|██████████| 756/756 [00:00<00:00, 37090.38it/s]
+Caching embeddings and unloading text encoder
+
+***** UNLOADING TEXT ENCODER *****
+Embeddings cached to disk. We dont need the text encoder anymore
+***********************************
+
+Generating baseline samples before training
+Generating Images:   0%|          | 0/8 [00:00<?, ?it/s]Unloading vae
+Unloading transformer
+Unloading text encoder
+
+  0%|          | 0/28 [00:00<?, ?it/s][A
+  4%|▎         | 1/28 [00:01<00:50,  1.86s/it][A
+  7%|▋         | 2/28 [00:03<00:46,  1.78s/it][A
+ 11%|█         | 3/28 [00:05<00:44,  1.76s/it][A
+ 14%|█▍        | 4/28 [00:07<00:41,  1.75s/it][A
+ 18%|█▊        | 5/28 [00:08<00:40,  1.74s/it][A
+ 21%|██▏       | 6/28 [00:10<00:38,  1.74s/it][A
+ 25%|██▌       | 7/28 [00:12<00:36,  1.74s/it][A
+ 29%|██▊       | 8/28 [00:14<00:34,  1.74s/it][A
+ 32%|███▏      | 9/28 [00:15<00:33,  1.75s/it][A
+ 36%|███▌      | 10/28 [00:19<00:40,  2.27s/it][A
+ 39%|███▉      | 11/28 [00:20<00:35,  2.11s/it][A
+ 43%|████▎     | 12/28 [00:22<00:32,  2.00s/it][A
