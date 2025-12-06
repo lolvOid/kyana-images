@@ -1,5 +1,17 @@
 # Cinema 4D Quick Reference - Kyana Smartwatch Renders
 
+## PRODUCT DIMENSIONS (Physical Specs)
+
+```
+Core Device:    33mm × 33mm × 8mm (0.8cm thick)
+Powerbank:      8mm (0.8cm thick)
+Strap 1 (short): 80mm (8cm) when straightened
+Strap 2 (long):  130mm (13cm) when straightened
+Total strap flat: 210mm (21cm)
+```
+
+---
+
 ## Quick Setup Checklist
 
 ### 1. Scene Setup (Do Once)
@@ -14,9 +26,10 @@
 
 ### 2. Camera Spline Radius by Render Type
 ```
-Full Assembly:     150-200mm radius
-Components:        100-120mm radius  
-Closeups:          80-100mm radius
+Full Assembly (with straps):  300-350mm radius
+Core Device Only (33mm):      80-100mm radius  
+Powerbank Only (8mm):         80-100mm radius
+Closeups:                     60-80mm radius
 ```
 
 ### 3. Camera Heights (Y-Position)

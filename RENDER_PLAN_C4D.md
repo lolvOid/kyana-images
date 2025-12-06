@@ -41,17 +41,34 @@
 
 ## CAMERA DISTANCE RECOMMENDATIONS
 
-**For Full Assembly Views:**
-- Distance from center: 150-200mm (device fills 70-80% of frame)
-- Allows space for strap curves, full watch visible
+**For Full Assembly FLAT (straps straightened - 210mm length):**
+- Distance from center: 300-350mm 
+- Frame captures: Full watch with extended straps horizontally
+- Use for: Product photography, technical specs, component showcase
+- Best angles: MID, LOW (for sensors), HIGH (for top connectors)
 
-**For Component Only (Core Device, Powerbank):**
-- Distance from center: 100-120mm (component fills 80-90% of frame)
-- Tighter framing for smaller parts
+**For Full Assembly CIRCULAR (straps curved - ~60-70mm diameter):**
+- Distance from center: 180-220mm
+- Frame captures: Watch in wearable circular form, more compact
+- Use for: Lifestyle shots, wrist-worn appearance, realistic context
+- Best angles: MID (slightly angled to show curve), 3/4 view
+
+**For Core Device Only (33mm × 33mm):**
+- Distance from center: 80-100mm (≈2.5× device width)
+- Frame captures: Device fills 80-90% of frame
+- Tighter framing for device alone
+- Formula: ~2.5-3× device width for good framing
+
+**For Powerbank Only (8mm thick cube):**
+- Distance from center: 80-100mm (similar to core device)
+- Small component, needs closer camera
+- Show LED indicator and USB-C port clearly
 
 **For Detail/Closeup:**
-- Distance from center: 80-100mm (detail fills frame)
+- Distance from center: 60-80mm
 - Extreme closeup of connectors, sensors, button
+- For macro shots of copper pins, LED sensors
+- May need narrower FOV (25-30°)
 
 ---
 
@@ -66,15 +83,27 @@
 - Thickness: 8mm (0.8cm)
 - Note: Attaches to strap, adds to overall system length
 
-### **Straps (When Straightened - Z axis):**
+### **Straps:**
+
+**When FLAT/STRAIGHTENED (for product shots):**
 - Strap 1 (Short side): 80mm (8cm)
 - Strap 2 (Long side): 130mm (13cm)
 - Total strap length flat: 210mm (21cm)
+- Configuration: Straps extended horizontally from device
+- Use for: Product photography, component showcase
+
+**When CIRCULAR/CURVED (for wearing simulation):**
+- Forms wearable circle/bracelet shape
+- Approximate diameter: 60-70mm (fits wrist)
+- Total circumference: 210mm (same as flat length)
+- Configuration: Straps curved to form closed loop
+- Use for: Lifestyle shots, wrist-worn appearance
 
 ### **Full Assembly Dimensions:**
-- Device: 33mm × 33mm × 8mm
-- Total with straps: ~210mm length when laid flat
-- Total with powerbank: +8mm thickness on strap
+- Device core: 33mm × 33mm × 8mm
+- **FLAT config**: ~210mm length when laid straight
+- **CIRCULAR config**: ~60-70mm diameter circle
+- With powerbank: +8mm thickness on strap section
 
 ---
 
@@ -96,35 +125,37 @@
 
 4. **STRAP_FLAT_ONLY**
    - Flat strap version alone (80mm + 130mm = 210mm total)
+   - Configuration: Straightened/extended horizontally
    - Shows: Clasp mechanism, 6 sensor windows
 
 5. **STRAP_CIRCULAR_ONLY**
    - Circular strap version alone
-   - Shows: Curved shape, sensors
+   - Configuration: Curved to form bracelet shape (~60-70mm diameter)
+   - Shows: Curved shape, sensors, realistic wearable form
 
 6. **RING_STRAP_FLAT** (No Core)
-   - Ring + Flat strap
-   - Shows: Empty center, connector system
+   - Ring + Flat strap (straps straightened)
+   - Shows: Empty center, connector system, 210mm strap length
 
 7. **RING_STRAP_CIRCULAR** (No Core)
-   - Ring + Circular strap
-   - Shows: Empty center, modular system
+   - Ring + Circular strap (straps curved)
+   - Shows: Empty center, modular system, wearable form
 
 8. **FULL_ASSEMBLY_FLAT**
-   - Core + Ring + Flat Strap
-   - Shows: Complete watch, flat strap variant
+   - Core + Ring + Flat Strap (straightened)
+   - Shows: Complete watch, flat strap variant, full 210mm length
 
 9. **FULL_ASSEMBLY_CIRCULAR**
-   - Core + Ring + Circular Strap
-   - Shows: Complete watch, circular strap variant
+   - Core + Ring + Circular Strap (curved)
+   - Shows: Complete watch, circular strap variant, wearable form
 
 10. **FULL_WITH_POWERBANK_FLAT**
-    - Core + Ring + Flat Strap + Powerbank
-    - Shows: Extended battery system
+    - Core + Ring + Flat Strap + Powerbank (straightened)
+    - Shows: Extended battery system, full length display
 
 11. **FULL_WITH_POWERBANK_CIRCULAR**
-    - Core + Ring + Circular Strap + Powerbank
-    - Shows: Complete system with battery
+    - Core + Ring + Circular Strap + Powerbank (curved)
+    - Shows: Complete system with battery, wearable configuration
 
 ---
 
@@ -133,52 +164,56 @@
 ### **PHASE 1 - ESSENTIAL PRODUCT SHOTS (Priority)**
 
 #### 1A. FULL_ASSEMBLY_FLAT_MID_360
-- Components: Core + Ring + Flat Strap
+- Components: Core + Ring + Flat Strap (straps straightened, 210mm length)
 - Camera: Mid-angle (your current setup)
 - Frames: 0-35 (36 frames)
-- Distance: 150-200mm
+- Distance: 300-350mm (to fit full strap length horizontally)
+- Configuration: Product photography style, straps extended
 - Output: `FULL_ASSEMBLY_FLAT_MID_360_1024x1024_####.png`
 
 #### 1B. FULL_ASSEMBLY_CIRCULAR_MID_360
-- Components: Core + Ring + Circular Strap
+- Components: Core + Ring + Circular Strap (curved to ~60-70mm diameter)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 180-220mm (more compact, circular form)
+- Configuration: Wearable style, straps form bracelet
 - Output: `FULL_ASSEMBLY_CIRCULAR_MID_360_1024x1024_####.png`
 
 #### 2A. FULL_WITH_POWERBANK_FLAT_MID_360
-- Components: Core + Ring + Flat Strap + Powerbank
+- Components: Core + Ring + Flat Strap + Powerbank (straightened)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 300-350mm (full length with powerbank on strap)
+- Configuration: Extended straps, powerbank visible on strap
 - Output: `FULL_WITH_POWERBANK_FLAT_MID_360_1024x1024_####.png`
 
 #### 2B. FULL_WITH_POWERBANK_CIRCULAR_MID_360
-- Components: Core + Ring + Circular Strap + Powerbank
+- Components: Core + Ring + Circular Strap + Powerbank (curved)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 180-220mm (circular form with powerbank)
+- Configuration: Wearable style with battery module
 - Output: `FULL_WITH_POWERBANK_CIRCULAR_MID_360_1024x1024_####.png`
 
 #### 3. CORE_DEVICE_ONLY_MID_360
-- Components: Core Device only
+- Components: Core Device only (33mm × 33mm × 8mm)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 100-120mm (closer, fills frame)
+- Distance: 80-100mm (closer, device fills frame)
 - Output: `CORE_DEVICE_ONLY_MID_360_1024x1024_####.png`
 
 #### 4. POWERBANK_ONLY_MID_360
-- Components: Powerbank only
+- Components: Powerbank only (8mm thick)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 100-120mm
+- Distance: 80-100mm
 - Output: `POWERBANK_ONLY_MID_360_1024x1024_####.png`
 
 #### 5. RING_STRAP_FLAT_MID_360
 - Components: Ring + Flat Strap (no core)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 300-350mm (full strap length)
 - Output: `RING_STRAP_FLAT_MID_360_1024x1024_####.png`
 
 ---
@@ -189,7 +224,7 @@
 - Components: Core + Ring + Flat Strap
 - Camera: LOW angle (looking up from below)
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 300-350mm
 - Sensors: CORE sensors (green/red) ON, STRAP sensors (green) ON
 - Output: `FULL_ASSEMBLY_FLAT_SENSORS_ON_LOW_360_1024x1024_####.png`
 
@@ -197,7 +232,7 @@
 - Components: Core + Ring + Circular Strap
 - Camera: LOW angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 300-350mm
 - Sensors: All ON
 - Output: `FULL_ASSEMBLY_CIRCULAR_SENSORS_ON_LOW_360_1024x1024_####.png`
 
@@ -205,7 +240,7 @@
 - Components: Core + Ring + Flat Strap
 - Camera: LOW angle
 - Frames: 0-35
-- Distance: 150-200mm
+- Distance: 300-350mm
 - Sensors: All OFF
 - Output: `FULL_ASSEMBLY_FLAT_SENSORS_OFF_LOW_360_1024x1024_####.png`
 
@@ -213,7 +248,7 @@
 - Components: Core Device only
 - Camera: LOW angle (show bottom sensors)
 - Frames: 0-35
-- Distance: 100-120mm
+- Distance: 80-100mm (close to 33mm device)
 - Sensors: Bottom biometric sensors ON (green/red LEDs)
 - Output: `CORE_DEVICE_SENSORS_ON_LOW_360_1024x1024_####.png`
 
@@ -221,7 +256,7 @@
 - Components: Flat Strap only (or with ring)
 - Camera: LOW angle (show strap bottom)
 - Frames: 0-35
-- Distance: 150mm
+- Distance: 200-250mm (strap length 210mm)
 - Sensors: 6 rectangular sensor windows with green LEDs ON
 - Output: `STRAP_FLAT_SENSORS_ON_LOW_360_1024x1024_####.png`
 
@@ -233,7 +268,7 @@
 - Components: Ring frame only or with strap
 - Camera: HIGH angle (looking down from above)
 - Frames: 0-35
-- Distance: 120mm (closeup)
+- Distance: 100mm (closeup)
 - Focus: 6 copper pins on top of ring clearly visible
 - Output: `COPPER_PINS_TOP_HIGH_360_1024x1024_####.png`
 
@@ -241,15 +276,15 @@
 - Components: Ring frame only (empty)
 - Camera: HIGH angle + tilted to look inside
 - Frames: 0-35
-- Distance: 120mm
+- Distance: 100mm
 - Focus: 4 internal magnetic connectors visible
 - Output: `MAGNETIC_CONNECTORS_INSIDE_HIGH_360_1024x1024_####.png`
 
 #### 12. BUTTON_SPEAKER_DETAIL_FLAT_360
-- Components: Core Device only
+- Components: Core Device only (33mm × 33mm × 8mm)
 - Camera: EYE-LEVEL / FLAT angle (same height as device)
 - Frames: 0-35
-- Distance: 80-100mm (extreme closeup)
+- Distance: 60-80mm (extreme closeup)
 - Focus: Button (right side) and Speaker (left side) detail
 - Output: `BUTTON_SPEAKER_DETAIL_FLAT_360_1024x1024_####.png`
 
@@ -262,10 +297,10 @@
 - Output: `CLASP_MECHANISM_DETAIL_FLAT_360_1024x1024_####.png`
 
 #### 14. DISPLAY_SCREEN_CLOSEUP_MID_360
-- Components: Core Device only
+- Components: Core Device only (33mm square)
 - Camera: MID angle slightly high
 - Frames: 0-35
-- Distance: 80mm (very close)
+- Distance: 60mm (very close)
 - Focus: LED display screen, glossy surface detail
 - Output: `DISPLAY_SCREEN_CLOSEUP_MID_360_1024x1024_####.png`
 
@@ -277,12 +312,12 @@
 - Animation sequence (not just rotation)
 - Frames: 0-120 (5 seconds at 24fps)
 - Camera: MID angle, STATIC (not moving)
-- Distance: 150-200mm
+- Distance: 350mm (wide to fit all components)
 - Animation:
-  - Frame 0-30: Strap flat on surface
+  - Frame 0-30: Strap flat on surface (210mm length visible)
   - Frame 31-50: Ring descends and connects to strap
-  - Frame 51-80: Core device descends and snaps into ring (magnetic)
-  - Frame 81-100: Powerbank slides in from side
+  - Frame 51-80: Core device (33mm × 8mm) descends and snaps into ring (magnetic)
+  - Frame 81-100: Powerbank (8mm thick) slides in from side
   - Frame 101-120: Final assembled watch with gentle rotation
 - Output: `ASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
 
@@ -290,6 +325,7 @@
 - Reverse of assembly
 - Frames: 0-120
 - Camera: MID angle, STATIC
+- Distance: 350mm
 - Animation: Complete watch → separates into components
 - Output: `DISASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
 
@@ -297,9 +333,9 @@
 - All components separated vertically with gaps
 - Camera: MID angle, ORBITING on spline
 - Frames: 0-35
-- Distance: 200mm (wider to fit all parts)
+- Distance: 350mm (wider to fit all parts)
 - Spacing: 50mm between each component vertically
-- Stack from top: Core → Ring → Strap → Powerbank
+- Stack from top: Core (33mm × 8mm) → Ring → Strap (210mm) → Powerbank (8mm)
 - Output: `EXPLODED_VIEW_360_1024x1024_####.png`
 
 ---
@@ -379,9 +415,10 @@
 - **HIGH**: Camera Y = +80mm to +120mm above device center
 
 ### Distance from Center (Spline Radius):
-- **Full assembly**: 150-200mm
-- **Components**: 100-120mm
-- **Closeups**: 80-100mm
+- **Full assembly with straps**: 300-350mm
+- **Core device only** (33mm): 80-100mm (≈2.5-3× device size)
+- **Powerbank only** (8mm thick): 80-100mm
+- **Closeup details**: 60-80mm
 
 ### Render Output Settings:
 - Format: PNG with Alpha
