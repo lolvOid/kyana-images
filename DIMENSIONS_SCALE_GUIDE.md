@@ -6,10 +6,10 @@
 ```
 ┌─────────────────┐
 │                 │
-│   33mm × 33mm   │  ← Square face
+│   30mm × 30mm   │  ← Square face (fits inside ring)
 │                 │
 │   Thickness:    │
-│      8mm        │
+│      10mm       │
 └─────────────────┘
 
 LED Display (top surface)
@@ -21,15 +21,16 @@ Sensors: Bottom (8 LEDs in circular array)
 ### Ring Frame (Outer Housing)
 ```
 ┌─────────────────┐
-│  ╔═══════════╗  │  ← Ring frame surrounds core
-│  ║  CORE 33  ║  │
-│  ║   × 33    ║  │
+│  ╔═══════════╗  │  ← Ring frame: 33mm × 33mm × 7mm
+│  ║  CORE 30  ║  │     Holds 30mm core inside
+│  ║   × 30    ║  │
 │  ╚═══════════╝  │
 └─────────────────┘
 
-Inside: 4 magnetic connectors (holds core device)
+Inside: 4 magnetic connectors (holds 30mm core device)
 Top Outside: 6 copper pins (for powerbank charging)
 Sides: Strap attachment points
+Overall: 33mm × 33mm × 7mm thick
 ```
 
 ### Powerbank Module
@@ -74,13 +75,14 @@ Strap Features:
 ```
         Strap 2 (130mm)           Strap 1 (80mm)
 ├─────────────────────────────┬─────┬──────────────────┤
-                              │33mm │
-                              │     │
+                              │33mm │ ← Ring (33mm × 7mm)
+                              │30mm │ ← Core (30mm × 10mm inside)
                         [Ring Frame]
                          [Core Device]
                               
 Total Length: ~210mm + ring frame width
-Center Device: 33mm × 33mm × 8mm
+Center Device: Core 30mm × 30mm × 10mm inside Ring 33mm × 33mm × 7mm
+Overall visible: 33mm × 33mm (ring exterior)
 ```
 
 ### With Powerbank
@@ -125,16 +127,16 @@ Camera Distance ≈ 2.5 to 3.0 × Object's Longest Dimension
 
 ### Applied to Kyana Components:
 
-#### 1. Core Device Only (33mm)
+#### 1. Core Device Only (30mm)
 ```
-Object Size: 33mm
-Camera Distance: 80-100mm (≈2.5-3× size)
+Object Size: 30mm
+Camera Distance: 70-90mm (≈2.5-3× size)
 Result: Device fills 80-90% of frame
 ```
 
-#### 2. Full Assembly with Straps (210mm length)
+#### 2. Full Assembly with Straps (210mm length, 33mm width)
 ```
-Object Size: ~210mm (strap length)
+Object Size: ~210mm (strap length), 33mm width (ring exterior)
 Camera Distance: 300-350mm (≈1.5-1.7× size for elongated object)
 Result: Full watch fits with margins
 Note: Straps are thin, so can be closer than 3× rule
@@ -150,7 +152,7 @@ Result: Component visible with detail
 #### 4. Detail Closeups (connector pins, sensors)
 ```
 Object Size: 3-5mm features
-Camera Distance: 60-80mm (macro range)
+Camera Distance: 50-70mm (macro range)
 Result: Extreme closeup of small details
 ```
 
@@ -169,12 +171,14 @@ In C4D Preferences:
 ### Step 2: Position Components at Origin
 ```
 Core Device: Place at (0, 0, 0)
-- Size: 33mm × 33mm × 8mm
+- Size: 30mm × 30mm × 10mm
 - Center pivot at device center
 
-Ring Frame: Parent to Core (when assembled)
-- Surrounds core device
-- Slightly larger than 33mm to fit around core
+Ring Frame: Surrounds Core (when assembled)
+- Size: 33mm × 33mm × 7mm
+- Fits around 30mm core device
+- 4 internal magnetic connectors hold core
+- 6 copper pins on top exterior
 
 Straps: Attach to ring frame sides
 - When laid flat (for product shots):
@@ -195,12 +199,12 @@ For Full Assembly Renders:
 5. Camera "Look At" target: (0, 0, 0)
 
 For Core Device Only:
-1. Radius: 90mm (midpoint of 80-100mm)
+1. Radius: 80mm (midpoint of 70-90mm)
 2. Camera height: +10mm (proportional to smaller object)
 3. All else same
 
 For Closeups:
-1. Radius: 70mm (midpoint of 60-80mm)
+1. Radius: 60mm (midpoint of 50-70mm)
 2. Camera height: +5mm to +10mm
 3. May need tighter field of view (FOV: 25-30°)
 ```
@@ -222,16 +226,17 @@ For Closeups:
 
 | Component Setup | Object Size | Camera Radius | Camera Height | FOV |
 |----------------|-------------|---------------|---------------|-----|
-| **Full Assembly Flat** | 210mm length | 300-350mm | +30-50mm | 36° |
+| **Full Assembly Flat** | 210mm length, 33mm width | 300-350mm | +30-50mm | 36° |
 | **Full Assembly Circular** | ~210mm circum | 300-350mm | +30-50mm | 36° |
 | **Full + Powerbank** | 210mm + PB | 320-370mm | +30-50mm | 36° |
-| **Core Device Only** | 33mm × 33mm | 80-100mm | +10-15mm | 36° |
-| **Powerbank Only** | 8mm thick | 80-100mm | +10-15mm | 36° |
-| **Ring + Strap (no core)** | 210mm length | 300-350mm | +30-50mm | 36° |
+| **Core Device Only** | 30mm × 30mm × 10mm | 70-90mm | +10-15mm | 36° |
+| **Ring Frame Only** | 33mm × 33mm × 7mm | 80-100mm | +10-15mm | 36° |
+| **Powerbank Only** | 8mm thick | 70-90mm | +10-15mm | 36° |
+| **Ring + Strap (no core)** | 210mm length, 33mm width | 300-350mm | +30-50mm | 36° |
 | **Copper Pins Closeup** | 5mm features | 60-80mm | +50-80mm (high angle) | 30° |
-| **Button/Speaker Detail** | 3mm features | 60-80mm | 0mm (eye-level) | 25° |
-| **Display Screen Closeup** | 33mm screen | 60-80mm | +10mm | 30° |
-| **Sensor Array Detail** | 10mm array | 70-90mm | -30-50mm (low angle) | 30° |
+| **Button/Speaker Detail** | 3mm features | 50-70mm | 0mm (eye-level) | 25° |
+| **Display Screen Closeup** | 30mm screen | 50-70mm | +10mm | 30° |
+| **Sensor Array Detail** | 10mm array | 60-80mm | -30-50mm (low angle) | 30° |
 
 ---
 
@@ -307,7 +312,9 @@ Before starting batch renders:
 
 ```
 ☐ World units set to millimeters
-☐ Core device is 33mm × 33mm × 8mm in scene
+☐ Core device is 30mm × 30mm × 10mm in scene
+☐ Ring frame is 33mm × 33mm × 7mm in scene
+☐ Ring fits around 30mm core (3mm gap on each side)
 ☐ Strap total length is 210mm when flat
 ☐ Powerbank is 8mm thickness
 ☐ Camera spline radius matches object size

@@ -3,11 +3,13 @@
 ## PRODUCT DIMENSIONS (Physical Specs)
 
 ```
-Core Device:    33mm × 33mm × 8mm (0.8cm thick)
-Powerbank:      8mm (0.8cm thick)
-Strap 1 (short): 80mm (8cm) when straightened
-Strap 2 (long):  130mm (13cm) when straightened
-Total strap flat: 210mm (21cm)
+Core Device:         30mm × 30mm × 10mm (1.0cm thick)
+Outer Ring Frame:    33mm × 33mm × 7mm (0.7cm thick)
+Powerbank:           8mm (0.8cm thick)
+Strap 1 (short):     80mm (8cm) when straightened
+Strap 2 (long):      130mm (13cm) when straightened
+Total strap flat:    210mm (21cm)
+Full device assembled: 33mm outer (ring), 30mm core inside
 ```
 
 ---
@@ -27,9 +29,10 @@ Total strap flat: 210mm (21cm)
 ### 2. Camera Spline Radius by Render Type
 ```
 Full Assembly (with straps):  300-350mm radius
-Core Device Only (33mm):      80-100mm radius  
-Powerbank Only (8mm):         80-100mm radius
-Closeups:                     60-80mm radius
+Core Device Only (30mm):      70-90mm radius  
+Ring Frame Only (33mm):       80-100mm radius
+Powerbank Only (8mm):         70-90mm radius
+Closeups:                     50-70mm radius
 ```
 
 ### 3. Camera Heights (Y-Position)

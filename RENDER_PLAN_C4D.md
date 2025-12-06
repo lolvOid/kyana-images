@@ -53,8 +53,8 @@
 - Use for: Lifestyle shots, wrist-worn appearance, realistic context
 - Best angles: MID (slightly angled to show curve), 3/4 view
 
-**For Core Device Only (33mm × 33mm):**
-- Distance from center: 80-100mm (≈2.5× device width)
+**For Core Device Only (30mm × 30mm):**
+- Distance from center: 70-90mm (≈2.5× device width)
 - Frame captures: Device fills 80-90% of frame
 - Tighter framing for device alone
 - Formula: ~2.5-3× device width for good framing
@@ -74,10 +74,17 @@
 
 ## PRODUCT DIMENSIONS (Actual Physical Specs)
 
-### **Core Device:**
+### **Core Device (Watch Module):**
+- Width: 30mm
+- Height: 30mm  
+- Thickness: 10mm (1.0cm)
+- Note: Sits inside the ring frame
+
+### **Outer Ring Frame:**
 - Width: 33mm
-- Height: 33mm  
-- Thickness: 8mm (0.8cm)
+- Height: 33mm
+- Thickness: 7mm (0.7cm)
+- Note: Surrounds and holds the 30mm core device
 
 ### **Powerbank:**
 - Thickness: 8mm (0.8cm)
@@ -100,10 +107,12 @@
 - Use for: Lifestyle shots, wrist-worn appearance
 
 ### **Full Assembly Dimensions:**
-- Device core: 33mm × 33mm × 8mm
+- Core device: 30mm × 30mm × 10mm
+- Outer ring: 33mm × 33mm × 7mm
+- Full device (core + ring): 33mm × 33mm overall, max thickness 10mm (core)
 - **FLAT config**: ~210mm length when laid straight
 - **CIRCULAR config**: ~60-70mm diameter circle
-- With powerbank: +8mm thickness on strap section
+- With powerbank: +8mm thickness on strap section (powerbank only)
 
 ---
 
@@ -112,11 +121,11 @@
 ### **ASSEMBLY COMBINATIONS:**
 
 1. **OUTER_RING_ONLY**
-   - Just the ring frame (hollow square)
+   - Just the ring frame (hollow square, 33mm × 33mm × 7mm)
    - Shows: 4 internal magnetic connectors, 6 copper pins on top
 
 2. **CORE_DEVICE_ONLY**
-   - Just the core module (33mm × 33mm × 8mm)
+   - Just the core module (30mm × 30mm × 10mm)
    - Shows: LED display, speaker, button, all sides
 
 3. **POWERBANK_ONLY**
@@ -196,10 +205,10 @@
 - Output: `FULL_WITH_POWERBANK_CIRCULAR_MID_360_1024x1024_####.png`
 
 #### 3. CORE_DEVICE_ONLY_MID_360
-- Components: Core Device only (33mm × 33mm × 8mm)
+- Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: Mid-angle
 - Frames: 0-35
-- Distance: 80-100mm (closer, device fills frame)
+- Distance: 70-90mm (closer, device fills frame)
 - Output: `CORE_DEVICE_ONLY_MID_360_1024x1024_####.png`
 
 #### 4. POWERBANK_ONLY_MID_360
@@ -245,10 +254,10 @@
 - Output: `FULL_ASSEMBLY_FLAT_SENSORS_OFF_LOW_360_1024x1024_####.png`
 
 #### 8. CORE_DEVICE_SENSORS_ON_LOW_360
-- Components: Core Device only
+- Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: LOW angle (show bottom sensors)
 - Frames: 0-35
-- Distance: 80-100mm (close to 33mm device)
+- Distance: 70-90mm (close to 30mm device)
 - Sensors: Bottom biometric sensors ON (green/red LEDs)
 - Output: `CORE_DEVICE_SENSORS_ON_LOW_360_1024x1024_####.png`
 
@@ -281,10 +290,10 @@
 - Output: `MAGNETIC_CONNECTORS_INSIDE_HIGH_360_1024x1024_####.png`
 
 #### 12. BUTTON_SPEAKER_DETAIL_FLAT_360
-- Components: Core Device only (33mm × 33mm × 8mm)
+- Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: EYE-LEVEL / FLAT angle (same height as device)
 - Frames: 0-35
-- Distance: 60-80mm (extreme closeup)
+- Distance: 50-70mm (extreme closeup)
 - Focus: Button (right side) and Speaker (left side) detail
 - Output: `BUTTON_SPEAKER_DETAIL_FLAT_360_1024x1024_####.png`
 
@@ -297,10 +306,10 @@
 - Output: `CLASP_MECHANISM_DETAIL_FLAT_360_1024x1024_####.png`
 
 #### 14. DISPLAY_SCREEN_CLOSEUP_MID_360
-- Components: Core Device only (33mm square)
+- Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: MID angle slightly high
 - Frames: 0-35
-- Distance: 60mm (very close)
+- Distance: 50mm (very close)
 - Focus: LED display screen, glossy surface detail
 - Output: `DISPLAY_SCREEN_CLOSEUP_MID_360_1024x1024_####.png`
 
@@ -315,8 +324,8 @@
 - Distance: 350mm (wide to fit all components)
 - Animation:
   - Frame 0-30: Strap flat on surface (210mm length visible)
-  - Frame 31-50: Ring descends and connects to strap
-  - Frame 51-80: Core device (33mm × 8mm) descends and snaps into ring (magnetic)
+  - Frame 31-50: Ring (33mm × 7mm) descends and connects to strap
+  - Frame 51-80: Core device (30mm × 10mm) descends and snaps into ring (magnetic)
   - Frame 81-100: Powerbank (8mm thick) slides in from side
   - Frame 101-120: Final assembled watch with gentle rotation
 - Output: `ASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
@@ -335,7 +344,7 @@
 - Frames: 0-35
 - Distance: 350mm (wider to fit all parts)
 - Spacing: 50mm between each component vertically
-- Stack from top: Core (33mm × 8mm) → Ring → Strap (210mm) → Powerbank (8mm)
+- Stack from top: Core (30mm × 10mm) → Ring (33mm × 7mm) → Strap (210mm) → Powerbank (8mm)
 - Output: `EXPLODED_VIEW_360_1024x1024_####.png`
 
 ---
@@ -416,9 +425,10 @@
 
 ### Distance from Center (Spline Radius):
 - **Full assembly with straps**: 300-350mm
-- **Core device only** (33mm): 80-100mm (≈2.5-3× device size)
-- **Powerbank only** (8mm thick): 80-100mm
-- **Closeup details**: 60-80mm
+- **Core device only** (30mm): 70-90mm (≈2.5-3× device size)
+- **Ring frame only** (33mm): 80-100mm
+- **Powerbank only** (8mm thick): 70-90mm
+- **Closeup details**: 50-70mm
 
 ### Render Output Settings:
 - Format: PNG with Alpha
