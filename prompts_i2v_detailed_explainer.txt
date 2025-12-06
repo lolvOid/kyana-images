@@ -1,0 +1,69 @@
+Animated labels appearing: pointing to speaker, button, display, sensors with text callouts
+Technical diagram overlay fading in: showing internal components, engineering view
+Infographic animation: 4 magnetic pins inside ring highlighted with connecting lines to core device
+Infographic animation: 6 copper pins on top highlighted with connecting lines to powerbank
+Measurement indicators appearing: showing 33mm width, 33mm height, case dimensions
+Exploded view with floating labels: each component named as it separates
+Component highlight sequence: ring glowing, then strap, then core device, then powerbank
+Zoom and highlight: focusing on speaker grille with detail callout
+Zoom and highlight: focusing on button with red accent indicator
+Zoom and highlight: focusing on biometric sensor array with LED identification
+Zoom and highlight: focusing on copper magnetic pins with material specification
+Feature demonstration: sensor array activating with explanation overlay
+Feature demonstration: powerbank LED indicator with battery status display
+Feature demonstration: clasp mechanism with security rating indicator
+Cross-section cutaway: watch slicing in half to show internal structure
+Transparent mode: watch becoming see-through to reveal magnetic connection system
+Material breakdown: components separating by material type - metal, plastic, silicone
+Color options showcase: watch morphing between black, white, silver, space grey variants
+Size comparison: watch next to common objects - coin, credit card, phone for scale
+Comparison animation: Kyana watch vs traditional watch, feature advantages highlighted
+Modular system explanation: swapping components, customization possibilities
+Battery life indicator: powerbank attaching with extended runtime graphic
+Sensor technology explanation: LED lights with wavelength specifications appearing
+Water resistance demonstration: water droplets hitting watch, beading off surface
+Durability test simulation: watch flexing, impact resistance visualization
+Connectivity animation: wireless signals emanating from watch, pairing demonstration
+Health metrics overlay: heart rate, blood oxygen, temperature readings appearing on screen
+Fitness tracking visualization: step count, calories, distance overlays
+Sleep tracking animation: nighttime scenario with sleep stage graphics
+App ecosystem display: watch face showing multiple app icons cycling
+Notification system: messages, calls, alerts appearing on display
+Voice control demonstration: sound waves appearing, voice command visualization
+Touch gesture guide: swipe patterns, tap zones, interaction map overlay
+Button function guide: single press, double press, long press actions shown
+Strap options carousel: different strap colors and styles rotating around core device
+Accessory ecosystem: powerbank, charging dock, additional straps appearing
+Package contents layout: all included items arranging in organized grid
+Unboxing sequence: box opening, layers revealing, components emerging
+Sustainability highlight: recyclable materials glowing green, eco-friendly indicators
+Manufacturing quality: close-up sweeps showing premium finish details
+Sensor accuracy demonstration: real-time health data with precision indicators
+Magnetic strength visualization: core device held only by magnetic force, strength test
+Modular advantages list: swappable battery, replaceable strap, upgradeable core benefits appearing
+Use case scenarios: cycling through fitness, wellness, productivity, lifestyle applications
+Day in life timeline: watch transitioning through morning, work, exercise, evening scenarios
+Compatibility showcase: watch connecting to phone, laptop, tablet via wireless
+Charging speed animation: battery filling rapidly with fast charge indicator
+Multi-device sync: data flowing from watch to phone to cloud visualization
+Privacy features: encryption symbols, secure data indicators appearing
+Customization options: watch faces changing, color themes shifting, personalization
+Size adjustment guide: strap with multiple clasp holes highlighted, fit instructions
+Maintenance tips: cleaning demonstration, care instructions overlay
+Warranty information: protected components highlighted, coverage details
+Technical specifications scrolling: full spec sheet with highlighted features
+Before and after: person's health improving with watch usage, tracking benefits
+Innovation highlights: unique modular system emphasized vs competitors
+Award badges appearing: design awards, tech recognition, review scores
+User testimonial integration: usage scenarios with positive feedback overlays
+Aerial view assembly: top-down perspective of components coming together
+Side-by-side comparison: with powerbank vs without, battery life difference shown
+Seasonal usage: watch in different weather conditions, adaptability demonstrated
+Professional scenarios: watch in office, meetings, presentations, business use
+Casual scenarios: watch in leisure activities, weekends, relaxation
+Active scenarios: watch during sports, hiking, running, intense activities
+Medical-grade sensors callout: FDA approval indicators, health accuracy certifications
+Bluetooth and connectivity: pairing sequence with phone, connection establishment
+Firmware update simulation: watch updating, progress bar, enhanced features appearing
+Gesture controls demo: wrist twist to activate, arm raise to wake, motion commands
+
