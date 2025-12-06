@@ -1,6 +1,6 @@
 job: extension
 config:
-  name: kyana_watch_wan22_t2v
+  name: kyana_watch_wan22_high_accuracy
   process:
   - type: sd_trainer
     training_folder: /data/kyana-images/output
@@ -8,41 +8,40 @@ config:
     trigger_word: kya-na
     network:
       type: lora
-      linear: 32
-      linear_alpha: 32
+      linear: 64
+      linear_alpha: 64
     save:
       dtype: float16
-      save_every: 500
-      max_step_saves_to_keep: 4
+      save_every: 250
+      max_step_saves_to_keep: 8
     datasets:
     - folder_path: /data/kyana-images/dataset
       caption_ext: txt
-      caption_dropout_rate: 0.05
+      caption_dropout_rate: 0.03
       shuffle_tokens: false
       num_frames: 1
       resolution:
-      - 512
-      - 768
       - 1024
     train:
       batch_size: 1
-      steps: 3000
-      gradient_accumulation: 1
+      steps: 5000
+      gradient_accumulation: 4
       train_unet: true
       train_text_encoder: false
       gradient_checkpointing: true
       noise_scheduler: flowmatch
       timestep_type: linear
       optimizer: adamw8bit
-      lr: 0.0001
+      lr: 8.0e-05
+      lr_scheduler: cosine
       optimizer_params:
-        weight_decay: 0.0001
+        weight_decay: 5.0e-05
       dtype: bf16
-      switch_boundary_every: 10
+      switch_boundary_every: 8
       cache_text_embeddings: true
       ema_config:
         use_ema: true
-        ema_decay: 0.99
+        ema_decay: 0.995
     model:
       name_or_path: ai-toolkit/Wan2.2-T2V-A14B-Diffusers-bf16
       arch: wan22_14b
@@ -56,7 +55,7 @@ config:
         train_low_noise: true
     sample:
       sampler: flowmatch
-      sample_every: 500
+      sample_every: 250
       width: 1024
       height: 1024
       num_frames: 1
@@ -86,6 +85,10 @@ config:
         glowing green indicating active heart rate monitoring, sweat-resistant matte
         silicon strap flexing naturally, LED display showing real-time workout metrics,
         athletic lifestyle product
+      - kya-na watch copper connector pins closeup, six golden pins on ring frame
+        top edge, metallic finish, technical detail shot, product engineering
+      - kya-na watch clasp mechanism, strap fastening system, matte silicon material,
+        circular wearable form, premium craftsmanship
       neg: blurry, out of focus, low quality, low resolution, distorted geometry,
         deformed product, unrealistic proportions, jittery motion, stuttering animation,
         choppy movement, unnatural physics, floating artifacts, watermark, text overlay,
@@ -97,8 +100,9 @@ config:
       seed: 42
       walk_seed: true
       guidance_scale: 3.5
-      sample_steps: 25
+      sample_steps: 28
 meta:
-  name: Kya-na Health Watch Wan2.2 T2V LoRA
-  version: '1.0'
-  description: LoRA trained on Wan2.2 T2V for Kya-na health watch product
+  name: Kya-na Health Watch Wan2.2 High Accuracy LoRA
+  version: '2.0'
+  description: High accuracy LoRA trained on Wan2.2 T2V/I2V for Kya-na health watch
+    product with optimized settings
