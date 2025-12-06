@@ -1,0 +1,87 @@
+job: extension
+config:
+  name: kyana_watch_wan22_t2v
+  process:
+    - type: sd_trainer
+      training_folder: /data/kyana-images/output
+      device: cuda:0
+      trigger_word: "kya-na"
+      
+      network:
+        type: lora
+        linear: 32
+        linear_alpha: 32
+      
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 4
+      
+      datasets:
+        - folder_path: /data/kyana-images/dataset
+          caption_ext: txt
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          num_frames: 1
+          resolution: [512, 768, 1024]
+      
+      train:
+        batch_size: 1
+        steps: 3000
+        gradient_accumulation: 1
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        noise_scheduler: flowmatch
+        timestep_type: linear
+        optimizer: adamw8bit
+        lr: 1e-4
+        optimizer_params:
+          weight_decay: 1e-4
+        dtype: bf16
+        
+        switch_boundary_every: 10
+        
+        cache_text_embeddings: true
+        
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+      
+      model:
+        name_or_path: "ai-toolkit/Wan2.2-T2V-A14B-Diffusers-bf16"
+        arch: 'wan22_14b'
+        quantize: true
+        qtype: "uint4|ostris/accuracy_recovery_adapters/wan22_14b_t2i_torchao_uint4.safetensors"
+        quantize_te: true
+        qtype_te: "qfloat8"
+        low_vram: true
+        model_kwargs:
+          train_high_noise: true
+          train_low_noise: true
+      
+      sample:
+        sampler: flowmatch
+        sample_every: 500
+        width: 1024
+        height: 1024
+        num_frames: 1
+        fps: 16
+        prompts:
+          - "kya-na health watch, premium product reveal, dramatic 360 degree rotation on glossy black surface, spotlight illumination creating reflections, circular wearable form with matte silicon strap, black metallic finish, 33mm square watch face, commercial product photography, cinematic camera movement, high-end tech advertisement"
+          - "kya-na watch biometric sensors, extreme macro closeup, chrome metal contacts on back of device activating sequentially, green LED pulse spreading across all six sensors, health monitoring initialization sequence, technical product demo, professional medical device quality, smooth animation"
+          - "kya-na health watch LED screen, dynamic UI animation, health metrics updating in real-time, heart rate graph animating, step counter incrementing, sleep data visualizing, modern interface design, premium app presentation"
+          - "kya-na watch complete assembly animation, all components floating in exploded view, matte silicon strap extended horizontally, ring frame descending with magnetic field visualization, core device rotating and snapping into place, powerbank module sliding in from side, isometric 2.5D perspective, Apple-style product reveal"
+          - "kya-na health watch on business professional's wrist, checking meeting schedule on LED display, natural office lighting through window, subtle wrist rotation showing watch face, premium lifestyle product, elegant daily use scenario"
+          - "kya-na watch during workout session, wrist in motion during exercise, sensors glowing green indicating active heart rate monitoring, sweat-resistant matte silicon strap flexing naturally, LED display showing real-time workout metrics, athletic lifestyle product"
+        neg: "blurry, out of focus, low quality, low resolution, distorted geometry, deformed product, unrealistic proportions, jittery motion, stuttering animation, choppy movement, unnatural physics, floating artifacts, watermark, text overlay, UI elements, logo placement, poor lighting, harsh shadows, overexposed, underexposed, amateur photography, unprofessional presentation, wrong colors, incorrect materials, plastic appearance, glossy strap, leather strap, round watch face, different design, brand confusion, unrealistic motion blur, temporal artifacts, flickering, cheap commercial aesthetic"
+        seed: 42
+        walk_seed: true
+        guidance_scale: 3.5
+        sample_steps: 25
+
+meta:
+  name: "Kya-na Health Watch Wan2.2 T2V LoRA"
+  version: '1.0'
+  description: "LoRA trained on Wan2.2 T2V for Kya-na health watch product"
+
