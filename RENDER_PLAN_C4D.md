@@ -55,6 +55,29 @@
 
 ---
 
+## PRODUCT DIMENSIONS (Actual Physical Specs)
+
+### **Core Device:**
+- Width: 33mm
+- Height: 33mm  
+- Thickness: 8mm (0.8cm)
+
+### **Powerbank:**
+- Thickness: 8mm (0.8cm)
+- Note: Attaches to strap, adds to overall system length
+
+### **Straps (When Straightened - Z axis):**
+- Strap 1 (Short side): 80mm (8cm)
+- Strap 2 (Long side): 130mm (13cm)
+- Total strap length flat: 210mm (21cm)
+
+### **Full Assembly Dimensions:**
+- Device: 33mm × 33mm × 8mm
+- Total with straps: ~210mm length when laid flat
+- Total with powerbank: +8mm thickness on strap
+
+---
+
 ## COMPONENTS TO RENDER
 
 ### **ASSEMBLY COMBINATIONS:**
@@ -64,15 +87,15 @@
    - Shows: 4 internal magnetic connectors, 6 copper pins on top
 
 2. **CORE_DEVICE_ONLY**
-   - Just the core module
+   - Just the core module (33mm × 33mm × 8mm)
    - Shows: LED display, speaker, button, all sides
 
 3. **POWERBANK_ONLY**
-   - Just the battery module
+   - Just the battery module (8mm thick)
    - Shows: Green LED, USB-C port, all angles
 
 4. **STRAP_FLAT_ONLY**
-   - Flat strap version alone
+   - Flat strap version alone (80mm + 130mm = 210mm total)
    - Shows: Clasp mechanism, 6 sensor windows
 
 5. **STRAP_CIRCULAR_ONLY**
