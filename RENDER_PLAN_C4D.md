@@ -1,279 +1,398 @@
 # Kyana Smartwatch - Cinema 4D Render Plan
-# Resolution: 1024x1024
-# Rotation: 360 degrees
-# Recommended: 72 frames (5° per frame) or 36 frames (10° per frame)
+# Camera Setup: Orbiting on Circular Spline (0-360°)
+# Device: Stationary at center
 
 ## RENDER SETTINGS
 - Resolution: 1024 x 1024
 - FPS: 24
 - Frames: 0-71 (72 frames) OR 0-35 (36 frames)
-- Rotation: Y-axis 360°
-- Background: White or Transparent
-
-## CAMERA SETUP
-All renders use rotating turntable with camera fixed:
-- Camera Distance: Appropriate to fill frame
-- Camera Height: Adjusted per view type
-- Rotation: Object rotates on Y-axis, camera static
+- Camera: Moves on circular spline 360°, aligned to spline
+- Device: Static at world origin
 
 ---
 
-## PRIMARY RENDERS (Essential)
+## CAMERA ANGLES NEEDED
 
-### 1. WATCH_CORE_ONLY_360
-- Component: Core device only (no ring, no strap)
-- Frames: 0-71
-- View: Front/center angle
-- Shows: LED display, speaker, button, all sides
-- Output: WATCH_CORE_ONLY_360_1024x1024_####.png
+### **1. MID-ANGLE (Your Current Setup) - MOST IMPORTANT**
+- Camera position: Slightly above device level (current setup)
+- Best for: Product showcase, showing top and sides together
+- Use for: 90% of renders
+- Distance: Medium (full device fills 70-80% of frame)
 
-### 2. WATCH_RING_STRAP_ONLY_360
-- Component: Ring frame + strap (no core device)
-- Frames: 0-71
-- View: Front/center angle
-- Shows: 4 internal magnetic connectors, 6 copper pins on top
-- Output: WATCH_RING_STRAP_ONLY_360_1024x1024_####.png
+### **2. EYE-LEVEL / FLAT ANGLE - ESSENTIAL**
+- Camera at exact same height as device center
+- Best for: Side details (button, speaker), profile views
+- Use for: Detail shots, side views
+- Distance: Same as mid-angle
 
-### 3. WATCH_FULL_ASSEMBLY_360
-- Component: Core + Ring + Strap (complete watch)
-- Frames: 0-71
-- View: Front/center angle (standard product view)
-- Shows: Fully assembled watch, all angles
-- Output: WATCH_FULL_ASSEMBLY_360_1024x1024_####.png
+### **3. LOW ANGLE - IMPORTANT FOR SENSORS**
+- Camera below device, looking up
+- Best for: Bottom sensors, showing biometric array clearly
+- Use for: Sensor-active states, technical details
+- Distance: Same as mid-angle
 
-### 4. WATCH_WITH_POWERBANK_360
-- Component: Core + Ring + Strap + Powerbank
-- Frames: 0-71
-- View: Front/center angle
-- Shows: Complete system with battery module
-- Output: WATCH_WITH_POWERBANK_360_1024x1024_####.png
-
-### 5. POWERBANK_ONLY_360
-- Component: Powerbank module standalone
-- Frames: 0-71
-- View: Center angle
-- Shows: Battery cube, LED, USB-C port
-- Output: POWERBANK_ONLY_360_1024x1024_####.png
+### **4. HIGH ANGLE - OPTIONAL**
+- Camera above device, looking down
+- Best for: Top view, showing 6 copper pins on ring
+- Use for: Connector details, top-down views
+- Distance: Same as mid-angle
 
 ---
 
-## SECONDARY RENDERS (Additional Angles)
+## CAMERA DISTANCE RECOMMENDATIONS
 
-### 6. WATCH_FULL_ASSEMBLY_LOW_ANGLE_360
-- Component: Core + Ring + Strap
-- Frames: 0-71
-- View: Low camera angle (looking up at watch)
-- Shows: Bottom profile, thickness, strap curve
-- Output: WATCH_FULL_ASSEMBLY_LOW_ANGLE_360_1024x1024_####.png
+**For Full Assembly Views:**
+- Distance from center: 150-200mm (device fills 70-80% of frame)
+- Allows space for strap curves, full watch visible
 
-### 7. WATCH_FULL_ASSEMBLY_HIGH_ANGLE_360
-- Component: Core + Ring + Strap
-- Frames: 0-71
-- View: High camera angle (looking down)
-- Shows: Top view, 6 copper pins, display screen
-- Output: WATCH_FULL_ASSEMBLY_HIGH_ANGLE_360_1024x1024_####.png
+**For Component Only (Core Device, Powerbank):**
+- Distance from center: 100-120mm (component fills 80-90% of frame)
+- Tighter framing for smaller parts
 
-### 8. WATCH_FULL_ASSEMBLY_SIDE_CLOSEUP_360
-- Component: Core + Ring + Strap
-- Frames: 0-71
-- View: Side angle closeup
-- Shows: Button detail, speaker detail, thickness
-- Output: WATCH_FULL_ASSEMBLY_SIDE_CLOSEUP_360_1024x1024_####.png
+**For Detail/Closeup:**
+- Distance from center: 80-100mm (detail fills frame)
+- Extreme closeup of connectors, sensors, button
 
 ---
 
-## SENSOR STATES (Static or Rotation)
+## COMPONENTS TO RENDER
 
-### 9. WATCH_SENSORS_ACTIVE_360
-- Component: Core + Ring + Strap
-- Frames: 0-71
-- View: Low angle showing bottom
-- Sensors: GREEN and RED LEDs ON
-- Shows: Active biometric sensors glowing
-- Output: WATCH_SENSORS_ACTIVE_360_1024x1024_####.png
+### **ASSEMBLY COMBINATIONS:**
 
-### 10. WATCH_SENSORS_OFF_360
-- Component: Core + Ring + Strap
-- Frames: 0-71
-- View: Low angle showing bottom
-- Sensors: All LEDs OFF
-- Shows: Inactive sensors, copper color visible
-- Output: WATCH_SENSORS_OFF_360_1024x1024_####.png
+1. **OUTER_RING_ONLY**
+   - Just the ring frame (hollow square)
+   - Shows: 4 internal magnetic connectors, 6 copper pins on top
 
-### 11. STRAP_SENSORS_ACTIVE_360
-- Component: Strap only or with ring
-- Frames: 0-71
-- View: Bottom/underside view
-- Sensors: 6 rectangular windows with GREEN LEDs ON
-- Output: STRAP_SENSORS_ACTIVE_360_1024x1024_####.png
+2. **CORE_DEVICE_ONLY**
+   - Just the core module
+   - Shows: LED display, speaker, button, all sides
+
+3. **POWERBANK_ONLY**
+   - Just the battery module
+   - Shows: Green LED, USB-C port, all angles
+
+4. **STRAP_FLAT_ONLY**
+   - Flat strap version alone
+   - Shows: Clasp mechanism, 6 sensor windows
+
+5. **STRAP_CIRCULAR_ONLY**
+   - Circular strap version alone
+   - Shows: Curved shape, sensors
+
+6. **RING_STRAP_FLAT** (No Core)
+   - Ring + Flat strap
+   - Shows: Empty center, connector system
+
+7. **RING_STRAP_CIRCULAR** (No Core)
+   - Ring + Circular strap
+   - Shows: Empty center, modular system
+
+8. **FULL_ASSEMBLY_FLAT**
+   - Core + Ring + Flat Strap
+   - Shows: Complete watch, flat strap variant
+
+9. **FULL_ASSEMBLY_CIRCULAR**
+   - Core + Ring + Circular Strap
+   - Shows: Complete watch, circular strap variant
+
+10. **FULL_WITH_POWERBANK_FLAT**
+    - Core + Ring + Flat Strap + Powerbank
+    - Shows: Extended battery system
+
+11. **FULL_WITH_POWERBANK_CIRCULAR**
+    - Core + Ring + Circular Strap + Powerbank
+    - Shows: Complete system with battery
 
 ---
 
-## DETAIL SHOTS (Close-up, can be 360° or specific angles)
+## COMPLETE RENDER LIST
 
-### 12. COPPER_CONNECTORS_TOP_CLOSEUP
-- Component: Ring frame top view
-- Frames: 0-35 (36 frames, slower rotation)
-- View: Extreme closeup of 6 copper pins
-- Shows: Golden connector details, precision pins
-- Output: COPPER_CONNECTORS_TOP_CLOSEUP_1024x1024_####.png
+### **PHASE 1 - ESSENTIAL PRODUCT SHOTS (Priority)**
 
-### 13. MAGNETIC_CONNECTORS_INSIDE_CLOSEUP
-- Component: Ring frame internal view
+#### 1A. FULL_ASSEMBLY_FLAT_MID_360
+- Components: Core + Ring + Flat Strap
+- Camera: Mid-angle (your current setup)
+- Frames: 0-35 (36 frames)
+- Distance: 150-200mm
+- Output: `FULL_ASSEMBLY_FLAT_MID_360_1024x1024_####.png`
+
+#### 1B. FULL_ASSEMBLY_CIRCULAR_MID_360
+- Components: Core + Ring + Circular Strap
+- Camera: Mid-angle
 - Frames: 0-35
-- View: Looking inside ring at 4 magnetic pins
-- Shows: Internal magnetic connection system
-- Output: MAGNETIC_CONNECTORS_INSIDE_CLOSEUP_1024x1024_####.png
+- Distance: 150-200mm
+- Output: `FULL_ASSEMBLY_CIRCULAR_MID_360_1024x1024_####.png`
 
-### 14. DISPLAY_SCREEN_CLOSEUP
-- Component: Core device
+#### 2A. FULL_WITH_POWERBANK_FLAT_MID_360
+- Components: Core + Ring + Flat Strap + Powerbank
+- Camera: Mid-angle
 - Frames: 0-35
-- View: Front display screen closeup
-- Shows: LED screen detail, glossy surface
-- Output: DISPLAY_SCREEN_CLOSEUP_1024x1024_####.png
+- Distance: 150-200mm
+- Output: `FULL_WITH_POWERBANK_FLAT_MID_360_1024x1024_####.png`
 
-### 15. BUTTON_SPEAKER_CLOSEUP
-- Component: Core device side
+#### 2B. FULL_WITH_POWERBANK_CIRCULAR_MID_360
+- Components: Core + Ring + Circular Strap + Powerbank
+- Camera: Mid-angle
 - Frames: 0-35
-- View: Side profile extreme closeup
-- Shows: Button on right, speaker grille on left
-- Output: BUTTON_SPEAKER_CLOSEUP_1024x1024_####.png
+- Distance: 150-200mm
+- Output: `FULL_WITH_POWERBANK_CIRCULAR_MID_360_1024x1024_####.png`
+
+#### 3. CORE_DEVICE_ONLY_MID_360
+- Components: Core Device only
+- Camera: Mid-angle
+- Frames: 0-35
+- Distance: 100-120mm (closer, fills frame)
+- Output: `CORE_DEVICE_ONLY_MID_360_1024x1024_####.png`
+
+#### 4. POWERBANK_ONLY_MID_360
+- Components: Powerbank only
+- Camera: Mid-angle
+- Frames: 0-35
+- Distance: 100-120mm
+- Output: `POWERBANK_ONLY_MID_360_1024x1024_####.png`
+
+#### 5. RING_STRAP_FLAT_MID_360
+- Components: Ring + Flat Strap (no core)
+- Camera: Mid-angle
+- Frames: 0-35
+- Distance: 150-200mm
+- Output: `RING_STRAP_FLAT_MID_360_1024x1024_####.png`
 
 ---
 
-## EXPLODED VIEWS (Optional, Advanced)
+### **PHASE 2 - SENSOR STATES (Essential for Training)**
 
-### 16. WATCH_EXPLODED_ASSEMBLY_360
-- Component: All parts separated vertically
-- Frames: 0-71
-- View: Center angle
-- Shows: Core floating above ring, ring above strap
-- Output: WATCH_EXPLODED_ASSEMBLY_360_1024x1024_####.png
+#### 6A. FULL_ASSEMBLY_FLAT_SENSORS_ON_LOW_360
+- Components: Core + Ring + Flat Strap
+- Camera: LOW angle (looking up from below)
+- Frames: 0-35
+- Distance: 150-200mm
+- Sensors: CORE sensors (green/red) ON, STRAP sensors (green) ON
+- Output: `FULL_ASSEMBLY_FLAT_SENSORS_ON_LOW_360_1024x1024_####.png`
 
-### 17. WATCH_ASSEMBLY_ANIMATION
-- Component: Parts coming together
+#### 6B. FULL_ASSEMBLY_CIRCULAR_SENSORS_ON_LOW_360
+- Components: Core + Ring + Circular Strap
+- Camera: LOW angle
+- Frames: 0-35
+- Distance: 150-200mm
+- Sensors: All ON
+- Output: `FULL_ASSEMBLY_CIRCULAR_SENSORS_ON_LOW_360_1024x1024_####.png`
+
+#### 7. FULL_ASSEMBLY_FLAT_SENSORS_OFF_LOW_360
+- Components: Core + Ring + Flat Strap
+- Camera: LOW angle
+- Frames: 0-35
+- Distance: 150-200mm
+- Sensors: All OFF
+- Output: `FULL_ASSEMBLY_FLAT_SENSORS_OFF_LOW_360_1024x1024_####.png`
+
+#### 8. CORE_DEVICE_SENSORS_ON_LOW_360
+- Components: Core Device only
+- Camera: LOW angle (show bottom sensors)
+- Frames: 0-35
+- Distance: 100-120mm
+- Sensors: Bottom biometric sensors ON (green/red LEDs)
+- Output: `CORE_DEVICE_SENSORS_ON_LOW_360_1024x1024_####.png`
+
+#### 9. STRAP_FLAT_SENSORS_ON_LOW_360
+- Components: Flat Strap only (or with ring)
+- Camera: LOW angle (show strap bottom)
+- Frames: 0-35
+- Distance: 150mm
+- Sensors: 6 rectangular sensor windows with green LEDs ON
+- Output: `STRAP_FLAT_SENSORS_ON_LOW_360_1024x1024_####.png`
+
+---
+
+### **PHASE 3 - DETAIL SHOTS (Closeup & Specific Angles)**
+
+#### 10. COPPER_PINS_TOP_HIGH_360
+- Components: Ring frame only or with strap
+- Camera: HIGH angle (looking down from above)
+- Frames: 0-35
+- Distance: 120mm (closeup)
+- Focus: 6 copper pins on top of ring clearly visible
+- Output: `COPPER_PINS_TOP_HIGH_360_1024x1024_####.png`
+
+#### 11. MAGNETIC_CONNECTORS_INSIDE_HIGH_360
+- Components: Ring frame only (empty)
+- Camera: HIGH angle + tilted to look inside
+- Frames: 0-35
+- Distance: 120mm
+- Focus: 4 internal magnetic connectors visible
+- Output: `MAGNETIC_CONNECTORS_INSIDE_HIGH_360_1024x1024_####.png`
+
+#### 12. BUTTON_SPEAKER_DETAIL_FLAT_360
+- Components: Core Device only
+- Camera: EYE-LEVEL / FLAT angle (same height as device)
+- Frames: 0-35
+- Distance: 80-100mm (extreme closeup)
+- Focus: Button (right side) and Speaker (left side) detail
+- Output: `BUTTON_SPEAKER_DETAIL_FLAT_360_1024x1024_####.png`
+
+#### 13. CLASP_MECHANISM_DETAIL_FLAT_360
+- Components: Flat Strap only
+- Camera: EYE-LEVEL
+- Frames: 0-35
+- Distance: 100mm
+- Focus: Clasp mechanism and connection detail
+- Output: `CLASP_MECHANISM_DETAIL_FLAT_360_1024x1024_####.png`
+
+#### 14. DISPLAY_SCREEN_CLOSEUP_MID_360
+- Components: Core Device only
+- Camera: MID angle slightly high
+- Frames: 0-35
+- Distance: 80mm (very close)
+- Focus: LED display screen, glossy surface detail
+- Output: `DISPLAY_SCREEN_CLOSEUP_MID_360_1024x1024_####.png`
+
+---
+
+### **PHASE 4 - ASSEMBLY ANIMATION (For I2V Training)**
+
+#### 15. ASSEMBLY_ANIMATION_FLAT
+- Animation sequence (not just rotation)
 - Frames: 0-120 (5 seconds at 24fps)
-- Animation: Exploded → Assembled over time
-- Shows: Modular assembly process
-- Output: WATCH_ASSEMBLY_ANIMATION_1024x1024_####.png
+- Camera: MID angle, STATIC (not moving)
+- Distance: 150-200mm
+- Animation:
+  - Frame 0-30: Strap flat on surface
+  - Frame 31-50: Ring descends and connects to strap
+  - Frame 51-80: Core device descends and snaps into ring (magnetic)
+  - Frame 81-100: Powerbank slides in from side
+  - Frame 101-120: Final assembled watch with gentle rotation
+- Output: `ASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
+
+#### 16. DISASSEMBLY_ANIMATION_FLAT
+- Reverse of assembly
+- Frames: 0-120
+- Camera: MID angle, STATIC
+- Animation: Complete watch → separates into components
+- Output: `DISASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
+
+#### 17. EXPLODED_VIEW_360
+- All components separated vertically with gaps
+- Camera: MID angle, ORBITING on spline
+- Frames: 0-35
+- Distance: 200mm (wider to fit all parts)
+- Spacing: 50mm between each component vertically
+- Stack from top: Core → Ring → Strap → Powerbank
+- Output: `EXPLODED_VIEW_360_1024x1024_####.png`
 
 ---
 
-## LIFESTYLE/CONTEXT RENDERS (Optional)
+## SUMMARY BY CAMERA ANGLE
 
-### 18. WATCH_ON_WRIST_360
-- Component: Watch on wrist model
-- Frames: 0-71
-- View: Natural wearing angle
-- Shows: How it looks when worn
-- Output: WATCH_ON_WRIST_360_1024x1024_####.png
+### **MID-ANGLE (Your Current Setup) - Use for:**
+- All full assembly renders (Phase 1)
+- Product showcase views
+- Component solo shots
+- Most versatile angle
 
-### 19. WATCH_WITH_ACCESSORIES_360
-- Component: Watch + charging cable + powerbank
-- Frames: 0-71
-- View: Product ecosystem
-- Shows: Complete package layout
-- Output: WATCH_WITH_ACCESSORIES_360_1024x1024_####.png
+### **LOW ANGLE - Use for:**
+- Sensor active/inactive states (Phase 2)
+- Bottom biometric sensor details
+- Strap sensor array views
+- Technical demonstration
+
+### **HIGH ANGLE - Use for:**
+- Top copper pins closeup (Phase 3)
+- Internal magnetic connectors
+- Top-down connector views
+
+### **EYE-LEVEL / FLAT ANGLE - Use for:**
+- Button & speaker side details (Phase 3)
+- Clasp mechanism
+- Side profile technical shots
 
 ---
 
-## COLOR VARIANTS (Future)
+## RENDER PRIORITY ORDER
 
-When ready for color variants, duplicate above with color suffix:
-- `_BLACK_` (current/default)
-- `_WHITE_`
-- `_SILVER_`
-- `_SPACE_GREY_`
+**Start Here (Must Have):**
+1. FULL_ASSEMBLY_FLAT_MID_360
+2. FULL_WITH_POWERBANK_FLAT_MID_360
+3. FULL_ASSEMBLY_FLAT_SENSORS_ON_LOW_360
+4. CORE_DEVICE_ONLY_MID_360
+5. RING_STRAP_FLAT_MID_360
 
-Example: `WATCH_FULL_ASSEMBLY_WHITE_360_1024x1024_####.png`
+**Next Priority (Important):**
+6. FULL_ASSEMBLY_CIRCULAR_MID_360
+7. POWERBANK_ONLY_MID_360
+8. STRAP_FLAT_SENSORS_ON_LOW_360
+9. CORE_DEVICE_SENSORS_ON_LOW_360
+10. COPPER_PINS_TOP_HIGH_360
+
+**Additional (Nice to Have):**
+11. BUTTON_SPEAKER_DETAIL_FLAT_360
+12. CLASP_MECHANISM_DETAIL_FLAT_360
+13. FULL_WITH_POWERBANK_CIRCULAR_MID_360
+14. MAGNETIC_CONNECTORS_INSIDE_HIGH_360
+
+**Advanced (For Animation Training):**
+15. ASSEMBLY_ANIMATION_FLAT
+16. EXPLODED_VIEW_360
+17. DISASSEMBLY_ANIMATION_FLAT
 
 ---
 
 ## CINEMA 4D SETUP CHECKLIST
 
-### Turntable Setup:
-1. Place watch at world origin (0,0,0)
-2. Create null object at origin as rotation parent
-3. Parent watch to null object
-4. Animate null object Y-rotation: 0° to 360° over 72 frames
-5. Camera remains static, pointing at origin
+### Camera on Spline Setup:
+1. Create circular spline at world origin
+2. Camera rides on spline with "Align to Spline" enabled
+3. Animate camera position along spline: 0% to 100% over 36 frames
+4. Device stays static at center (0,0,0)
 
-### Keyframe Settings:
-- Frame 0: Rotation Y = 0°
-- Frame 72: Rotation Y = 360°
-- Interpolation: Linear (no easing)
+### Frame Settings:
+- Frame 0: Camera at 0% spline position (0°)
+- Frame 36: Camera at 100% spline position (360°)
+- Interpolation: Linear
 
-### Render Settings:
-- Resolution: 1024 x 1024
+### Camera Height Adjustments:
+- **MID**: Camera Y = +20mm to +50mm above device center
+- **FLAT/EYE-LEVEL**: Camera Y = 0mm (same as device center)
+- **LOW**: Camera Y = -30mm to -50mm below device center
+- **HIGH**: Camera Y = +80mm to +120mm above device center
+
+### Distance from Center (Spline Radius):
+- **Full assembly**: 150-200mm
+- **Components**: 100-120mm
+- **Closeups**: 80-100mm
+
+### Render Output Settings:
 - Format: PNG with Alpha
-- Color Depth: 8-bit or 16-bit
-- Anti-aliasing: Best quality
-- Frame Range: 0 to 71 (or 0 to 35)
-- Frame Step: 1
-
-### Output Naming:
-Cinema 4D Output: `$prj/$take/$take_####.$ext`
-Results in: `WATCH_FULL_ASSEMBLY_360_0000.png`
+- Resolution: 1024 x 1024
+- Color Depth: 8-bit
+- Anti-aliasing: Best
+- Frame Range: 0 to 35
+- Output: `$prj/$take/$take_####.png`
 
 ---
 
-## PRIORITY RENDERING ORDER
+## ESTIMATED RENDER COUNT
 
-**Phase 1 - Essential (Must Have):**
-1. WATCH_FULL_ASSEMBLY_360
-2. WATCH_WITH_POWERBANK_360
-3. WATCH_CORE_ONLY_360
-4. WATCH_RING_STRAP_ONLY_360
-5. POWERBANK_ONLY_360
-6. WATCH_SENSORS_ACTIVE_360
+**Phase 1** (Essential Product): 7 renders × 36 frames = **252 images**
+**Phase 2** (Sensor States): 4 renders × 36 frames = **144 images**
+**Phase 3** (Details): 5 renders × 36 frames = **180 images**
+**Phase 4** (Animation): 3 renders × 36-120 frames = **210 images**
 
-**Phase 2 - Important (Recommended):**
-7. WATCH_FULL_ASSEMBLY_LOW_ANGLE_360
-8. WATCH_FULL_ASSEMBLY_SIDE_CLOSEUP_360
-9. STRAP_SENSORS_ACTIVE_360
-10. COPPER_CONNECTORS_TOP_CLOSEUP
-
-**Phase 3 - Nice to Have:**
-11. WATCH_FULL_ASSEMBLY_HIGH_ANGLE_360
-12. MAGNETIC_CONNECTORS_INSIDE_CLOSEUP
-13. DISPLAY_SCREEN_CLOSEUP
-14. BUTTON_SPEAKER_CLOSEUP
-
-**Phase 4 - Advanced:**
-15. WATCH_EXPLODED_ASSEMBLY_360
-16. WATCH_ASSEMBLY_ANIMATION
-17. WATCH_ON_WRIST_360
-
----
-
-## ESTIMATED RENDER TIME & FILE COUNT
-
-If using 72 frames per rotation:
-- Phase 1: 6 renders × 72 frames = 432 images
-- Phase 2: 4 renders × 36-72 frames = ~200 images
-- Phase 3: 4 renders × 36 frames = 144 images
-- Phase 4: 3 renders × 72-120 frames = ~250 images
-
-**Total: ~1000 images for complete dataset**
-
-For faster training start, use 36 frames per rotation:
-- Phase 1: 6 renders × 36 frames = 216 images
-- Phase 2: 4 renders × 36 frames = 144 images
-**Total: ~360 images for core dataset**
+**Total Core Dataset: ~400 images** (Phase 1 + 2)
+**Total Complete: ~786 images** (All phases)
 
 ---
 
 ## RECOMMENDATION
 
-**Start with 36 frames (10° increments) for Phase 1:**
-- Faster rendering
-- Still captures all angles
-- Good for initial LoRA training
-- Can upgrade to 72 frames later if needed
+**Start with 36 frames (10° per frame):**
+✅ Faster rendering
+✅ Good coverage for training
+✅ Can upgrade to 72 frames later
 
-**Use 72 frames for final production:**
-- Smoother video generation
-- Better T2V/I2V results
-- More training data
-- Higher quality outputs
+**Focus on Phase 1 + Phase 2 first:**
+✅ Essential for product LoRA
+✅ Covers all angles and sensor states
+✅ ~400 images = solid training dataset
 
+**Your current mid-angle setup is perfect for 90% of renders!**
+Just adjust camera height for LOW, HIGH, and FLAT angles as needed.
