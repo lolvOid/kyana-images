@@ -271,57 +271,120 @@
 
 ---
 
-### **PHASE 3 - DETAIL SHOTS (Closeup & Specific Angles)**
+### **PHASE 3 - STATIC CARDINAL VIEWS & DETAILS**
 
-#### 10. COPPER_PINS_TOP_HIGH_360
+#### 10. FULL_ASSEMBLY_FLAT_CARDINAL_VIEWS
+- Components: Core + Ring + Flat Strap (full assembly)
+- Camera: STATIC (6 separate renders, 1 frame each or 12-frame subtle rotation)
+- Distance: 300mm
+- Frames: 1 frame per angle OR 0-11 frames (short sequence per angle)
+- **6 Angles:**
+  - **FRONT**: Camera at (0, +40, 300), looking at origin, shows display screen
+  - **BACK**: Camera at (0, +40, -300), shows sensors bottom
+  - **LEFT**: Camera at (-300, +40, 0), shows speaker side
+  - **RIGHT**: Camera at (300, +40, 0), shows button side
+  - **TOP**: Camera at (0, 150, 0), looking straight down, shows 6 copper pins
+  - **BOTTOM**: Camera at (0, -150, 0), looking straight up, shows biometric sensors
+- Output: `FULL_ASSEMBLY_FLAT_FRONT_1024x1024.png` (or _0000-0011 if animated)
+- Note: Can do 6×1=6 images OR 6×12=72 images if you want subtle motion per angle
+
+#### 11. COPPER_PINS_TOP_HIGH_360
 - Components: Ring frame only or with strap
 - Camera: HIGH angle (looking down from above)
 - Frames: 0-35
 - Distance: 100mm (closeup)
+- Camera Height: Y = +100mm
 - Focus: 6 copper pins on top of ring clearly visible
 - Output: `COPPER_PINS_TOP_HIGH_360_1024x1024_####.png`
 
-#### 11. MAGNETIC_CONNECTORS_INSIDE_HIGH_360
-- Components: Ring frame only (empty)
+#### 12. MAGNETIC_CONNECTORS_INSIDE_HIGH_360
+- Components: Ring frame only (empty, no core)
 - Camera: HIGH angle + tilted to look inside
 - Frames: 0-35
 - Distance: 100mm
-- Focus: 4 internal magnetic connectors visible
+- Camera Height: Y = +100mm, Pitch = -15° (tilt to see inside)
+- Focus: 4 internal magnetic connectors visible in hollow center
 - Output: `MAGNETIC_CONNECTORS_INSIDE_HIGH_360_1024x1024_####.png`
 
-#### 12. BUTTON_SPEAKER_DETAIL_FLAT_360
+#### 13. BUTTON_SPEAKER_DETAIL_FLAT_360
 - Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: EYE-LEVEL / FLAT angle (same height as device)
 - Frames: 0-35
 - Distance: 50-70mm (extreme closeup)
+- Camera Height: Y = 0mm (eye-level with device center)
 - Focus: Button (right side) and Speaker (left side) detail
 - Output: `BUTTON_SPEAKER_DETAIL_FLAT_360_1024x1024_####.png`
-
-#### 13. CLASP_MECHANISM_DETAIL_FLAT_360
-- Components: Flat Strap only
-- Camera: EYE-LEVEL
-- Frames: 0-35
-- Distance: 100mm
-- Focus: Clasp mechanism and connection detail
-- Output: `CLASP_MECHANISM_DETAIL_FLAT_360_1024x1024_####.png`
 
 #### 14. DISPLAY_SCREEN_CLOSEUP_MID_360
 - Components: Core Device only (30mm × 30mm × 10mm)
 - Camera: MID angle slightly high
 - Frames: 0-35
 - Distance: 50mm (very close)
+- Camera Height: Y = +15mm
 - Focus: LED display screen, glossy surface detail
 - Output: `DISPLAY_SCREEN_CLOSEUP_MID_360_1024x1024_####.png`
+
+#### 15. CLASP_MECHANISM_DETAIL_CLOSEUP_360
+- Components: Flat or Circular Strap (focus on clasp area)
+- Camera: EYE-LEVEL, orbiting around clasp section
+- Frames: 0-35
+- Distance: 80-100mm (close to clasp)
+- Camera Height: Y = 0mm
+- Focus: Clasp buckle, pin holes, fastening mechanism
+- Output: `CLASP_MECHANISM_DETAIL_CLOSEUP_360_1024x1024_####.png`
+
+---
+
+### **PHASE 3B - CLASP MECHANISM ANIMATIONS**
+
+#### 16. CLASP_OPEN_ANIMATION_CIRCULAR
+- Components: Core + Ring + Circular Strap (curved, wearable form)
+- Camera: STATIC side view (not rotating)
+- Frames: 0-60 (2.5 seconds at 24fps)
+- Distance: 200mm
+- Camera Position: Side angle showing clasp clearly, Y = 0mm (eye-level)
+- Animation Timeline:
+  - Frame 0-20: Clasp closed, watch in wearable circle
+  - Frame 21-40: Clasp pin releases, starts opening
+  - Frame 41-60: Straps separate, opening complete
+- Focus: How clasp mechanism unfastens
+- Output: `CLASP_OPEN_ANIMATION_CIRCULAR_1024x1024_####.png`
+
+#### 17. CLASP_CLOSE_ANIMATION_CIRCULAR
+- Components: Core + Ring + Circular Strap
+- Camera: STATIC side view
+- Frames: 0-60
+- Distance: 200mm
+- Camera Position: Same as #16
+- Animation Timeline:
+  - Frame 0-20: Straps separated, clasp open
+  - Frame 21-40: Straps coming together, aligning
+  - Frame 41-60: Clasp pin inserts through hole, locked position
+- Focus: How clasp mechanism fastens
+- Output: `CLASP_CLOSE_ANIMATION_CIRCULAR_1024x1024_####.png`
+
+#### 18. CLASP_ADJUSTMENT_ANIMATION_CIRCULAR
+- Components: Core + Ring + Circular Strap
+- Camera: STATIC closeup on clasp area
+- Frames: 0-60
+- Distance: 120mm (closer to clasp)
+- Animation Timeline:
+  - Frame 0-20: Clasp at hole position 3
+  - Frame 21-40: Pin releases, moves to hole position 5
+  - Frame 41-60: Pin locks into new position
+- Focus: Strap length adjustment mechanism
+- Output: `CLASP_ADJUSTMENT_ANIMATION_CIRCULAR_1024x1024_####.png`
 
 ---
 
 ### **PHASE 4 - ASSEMBLY ANIMATION (For I2V Training)**
 
-#### 15. ASSEMBLY_ANIMATION_FLAT
+#### 19. ASSEMBLY_ANIMATION_FLAT
 - Animation sequence (not just rotation)
 - Frames: 0-120 (5 seconds at 24fps)
 - Camera: MID angle, STATIC (not moving)
 - Distance: 350mm (wide to fit all components)
+- Camera Position: Fixed at (0, +40, 350)
 - Animation:
   - Frame 0-30: Strap flat on surface (210mm length visible)
   - Frame 31-50: Ring (33mm × 7mm) descends and connects to strap
@@ -330,19 +393,20 @@
   - Frame 101-120: Final assembled watch with gentle rotation
 - Output: `ASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
 
-#### 16. DISASSEMBLY_ANIMATION_FLAT
+#### 20. DISASSEMBLY_ANIMATION_FLAT
 - Reverse of assembly
 - Frames: 0-120
 - Camera: MID angle, STATIC
 - Distance: 350mm
-- Animation: Complete watch → separates into components
+- Animation: Complete watch → powerbank slides off → core lifts out → ring lifts off → strap remains
 - Output: `DISASSEMBLY_ANIMATION_FLAT_1024x1024_####.png`
 
-#### 17. EXPLODED_VIEW_360
+#### 21. EXPLODED_VIEW_360
 - All components separated vertically with gaps
 - Camera: MID angle, ORBITING on spline
 - Frames: 0-35
 - Distance: 350mm (wider to fit all parts)
+- Camera Height: Y = +40mm
 - Spacing: 50mm between each component vertically
 - Stack from top: Core (30mm × 10mm) → Ring (33mm × 7mm) → Strap (210mm) → Powerbank (8mm)
 - Output: `EXPLODED_VIEW_360_1024x1024_####.png`
