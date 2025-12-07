@@ -1,0 +1,77 @@
+# Training outputs
+output/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Log files
+*.log
+*.txt.log
+training.log
+wan22_training.log
+wan22_high_accuracy_training.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Dataset cache
+_latent_cache/
+.cache/
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.picasa.ini
+desktop.ini
+
+# Large files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+*.tar.gz
+*.rar
+
+# Hugging Face cache
+.huggingface/
+
+# Weights and models (except if you want to track them)
+*.h5
+*.hdf5
+*.model
+
+# Don't ignore these
+!.gitignore
+!README*.md
+
