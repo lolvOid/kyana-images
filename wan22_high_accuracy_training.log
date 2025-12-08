@@ -1,318 +1,0 @@
-Running 1 job
-{
-    "type": "sd_trainer",
-    "training_folder": "/data/kyana-images/output",
-    "device": "cuda:0",
-    "trigger_word": "kya-na",
-    "network": {
-        "type": "lora",
-        "linear": 64,
-        "linear_alpha": 64
-    },
-    "save": {
-        "dtype": "float16",
-        "save_every": 250,
-        "max_step_saves_to_keep": 8
-    },
-    "datasets": [
-        {
-            "folder_path": "/data/kyana-images/dataset",
-            "caption_ext": "txt",
-            "caption_dropout_rate": 0.03,
-            "shuffle_tokens": false,
-            "num_frames": 1,
-            "resolution": [
-                1024
-            ]
-        }
-    ],
-    "train": {
-        "batch_size": 1,
-        "steps": 5000,
-        "gradient_accumulation": 4,
-        "train_unet": true,
-        "train_text_encoder": false,
-        "gradient_checkpointing": true,
-        "noise_scheduler": "flowmatch",
-        "timestep_type": "linear",
-        "optimizer": "adamw8bit",
-        "lr": 8e-05,
-        "lr_scheduler": "cosine",
-        "optimizer_params": {
-            "weight_decay": 5e-05
-        },
-        "dtype": "bf16",
-        "switch_boundary_every": 8,
-        "cache_text_embeddings": true,
-        "ema_config": {
-            "use_ema": true,
-            "ema_decay": 0.995
-        }
-    },
-    "model": {
-        "name_or_path": "ai-toolkit/Wan2.2-T2V-A14B-Diffusers-bf16",
-        "arch": "wan22_14b",
-        "quantize": true,
-        "qtype": "uint4|ostris/accuracy_recovery_adapters/wan22_14b_t2i_torchao_uint4.safetensors",
-        "quantize_te": true,
-        "qtype_te": "qfloat8",
-        "low_vram": true,
-        "model_kwargs": {
-            "train_high_noise": true,
-            "train_low_noise": true
-        }
-    },
-    "sample": {
-        "sampler": "flowmatch",
-        "sample_every": 250,
-        "width": 1024,
-        "height": 1024,
-        "num_frames": 1,
-        "fps": 16,
-        "prompts": [
-            "kya-na health watch, premium product reveal, dramatic 360 degree rotation on glossy black surface, spotlight illumination creating reflections, circular wearable form with matte silicon strap, black metallic finish, 33mm square watch face, commercial product photography, cinematic camera movement, high-end tech advertisement",
-            "kya-na watch biometric sensors, extreme macro closeup, chrome metal contacts on back of device activating sequentially, green LED pulse spreading across all six sensors, health monitoring initialization sequence, technical product demo, professional medical device quality, smooth animation",
-            "kya-na health watch LED screen, dynamic UI animation, health metrics updating in real-time, heart rate graph animating, step counter incrementing, sleep data visualizing, modern interface design, premium app presentation",
-            "kya-na watch complete assembly animation, all components floating in exploded view, matte silicon strap extended horizontally, ring frame descending with magnetic field visualization, core device rotating and snapping into place, powerbank module sliding in from side, isometric 2.5D perspective, Apple-style product reveal",
-            "kya-na health watch on business professional's wrist, checking meeting schedule on LED display, natural office lighting through window, subtle wrist rotation showing watch face, premium lifestyle product, elegant daily use scenario",
-            "kya-na watch during workout session, wrist in motion during exercise, sensors glowing green indicating active heart rate monitoring, sweat-resistant matte silicon strap flexing naturally, LED display showing real-time workout metrics, athletic lifestyle product",
-            "kya-na watch copper connector pins closeup, six golden pins on ring frame top edge, metallic finish, technical detail shot, product engineering",
-            "kya-na watch clasp mechanism, strap fastening system, matte silicon material, circular wearable form, premium craftsmanship"
-        ],
-        "neg": "blurry, out of focus, low quality, low resolution, distorted geometry, deformed product, unrealistic proportions, jittery motion, stuttering animation, choppy movement, unnatural physics, floating artifacts, watermark, text overlay, UI elements, logo placement, poor lighting, harsh shadows, overexposed, underexposed, amateur photography, unprofessional presentation, wrong colors, incorrect materials, plastic appearance, glossy strap, leather strap, round watch face, different design, brand confusion, unrealistic motion blur, temporal artifacts, flickering, cheap commercial aesthetic",
-        "seed": 42,
-        "walk_seed": true,
-        "guidance_scale": 3.5,
-        "sample_steps": 28
-    }
-}
-Using EMA
-
-#############################################
-# Running job: kyana_watch_wan22_high_accuracy
-#############################################
-
-
-Running  1 process
-Loading Wan model
-Loading transformer 1
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 49.29it/s]
-Moving transformer 1 to CPU
-Loading transformer 2
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.66it/s]
-Moving transformer 2 to CPU
-Creating DualWanTransformer3DModel
-Applying Accuracy Recovery Adapter to Transformers
-Grabbing lora from the hub: ostris/accuracy_recovery_adapters/wan22_14b_t2i_torchao_uint4.safetensors
-create LoRA network. base dim (rank): 16, alpha: 16
-neuron dropout: p=None, rank dropout: p=None, module dropout: p=None
-create LoRA for Text Encoder: 0 modules.
-create LoRA for U-Net: 812 modules.
-enable LoRA for U-Net
-Missing keys: []
-Attaching quantization:   0%|          | 0/812 [00:00<?, ?it/s]Attaching quantization:   0%|          | 4/812 [00:00<00:22, 35.74it/s]Attaching quantization:   1%|▏         | 12/812 [00:00<00:14, 56.67it/s]Attaching quantization:   2%|▏         | 18/812 [00:00<00:14, 53.97it/s]Attaching quantization:   3%|▎         | 25/812 [00:00<00:14, 53.92it/s]Attaching quantization:   4%|▍         | 32/812 [00:00<00:13, 57.57it/s]Attaching quantization:   5%|▍         | 38/812 [00:00<00:14, 52.09it/s]Attaching quantization:   5%|▌         | 44/812 [00:00<00:14, 54.02it/s]Attaching quantization:   6%|▋         | 51/812 [00:00<00:13, 57.13it/s]Attaching quantization:   7%|▋         | 57/812 [00:01<00:14, 52.82it/s]Attaching quantization:   8%|▊         | 64/812 [00:01<00:13, 55.01it/s]Attaching quantization:   9%|▊         | 70/812 [00:01<00:13, 55.33it/s]Attaching quantization:   9%|▉         | 76/812 [00:01<00:14, 52.21it/s]Attaching quantization:  10%|█         | 84/812 [00:01<00:13, 55.68it/s]Attaching quantization:  11%|█         | 91/812 [00:01<00:12, 57.06it/s]Attaching quantization:  12%|█▏        | 97/812 [00:01<00:12, 55.15it/s]Attaching quantization:  13%|█▎        | 104/812 [00:01<00:12, 56.12it/s]Attaching quantization:  14%|█▎        | 111/812 [00:02<00:12, 58.08it/s]Attaching quantization:  14%|█▍        | 117/812 [00:02<00:12, 55.31it/s]Attaching quantization:  15%|█▌        | 123/812 [00:02<00:12, 53.12it/s]Attaching quantization:  16%|█▌        | 129/812 [00:02<00:14, 48.22it/s]Attaching quantization:  17%|█▋        | 134/812 [00:02<00:14, 46.85it/s]Attaching quantization:  17%|█▋        | 140/812 [00:02<00:13, 50.15it/s]Attaching quantization:  18%|█▊        | 146/812 [00:02<00:14, 46.63it/s]Attaching quantization:  19%|█▉        | 153/812 [00:02<00:12, 51.86it/s]Attaching quantization:  20%|█▉        | 159/812 [00:02<00:12, 51.65it/s]Attaching quantization:  20%|██        | 165/812 [00:03<00:12, 51.08it/s]Attaching quantization:  21%|██▏       | 173/812 [00:03<00:11, 56.01it/s]Attaching quantization:  22%|██▏       | 179/812 [00:03<00:11, 54.98it/s]Attaching quantization:  23%|██▎       | 185/812 [00:03<00:11, 54.32it/s]Attaching quantization:  24%|██▍       | 193/812 [00:03<00:10, 60.66it/s]Attaching quantization:  25%|██▍       | 200/812 [00:03<00:10, 56.98it/s]Attaching quantization:  25%|██▌       | 206/812 [00:03<00:11, 54.71it/s]Attaching quantization:  26%|██▋       | 214/812 [00:03<00:10, 57.14it/s]Attaching quantization:  27%|██▋       | 220/812 [00:04<00:10, 57.29it/s]Attaching quantization:  28%|██▊       | 226/812 [00:04<00:10, 53.34it/s]Attaching quantization:  29%|██▉       | 234/812 [00:04<00:10, 56.77it/s]Attaching quantization:  30%|██▉       | 241/812 [00:04<00:09, 58.39it/s]Attaching quantization:  30%|███       | 247/812 [00:04<00:09, 56.63it/s]Attaching quantization:  31%|███▏      | 254/812 [00:04<00:09, 56.47it/s]Attaching quantization:  32%|███▏      | 260/812 [00:04<00:10, 51.01it/s]Attaching quantization:  33%|███▎      | 266/812 [00:04<00:11, 46.26it/s]Attaching quantization:  34%|███▎      | 273/812 [00:05<00:10, 50.62it/s]Attaching quantization:  34%|███▍      | 279/812 [00:05<00:10, 50.68it/s]Attaching quantization:  35%|███▌      | 285/812 [00:05<00:10, 51.04it/s]Attaching quantization:  36%|███▌      | 293/812 [00:05<00:09, 56.92it/s]Attaching quantization:  37%|███▋      | 299/812 [00:05<00:09, 54.35it/s]Attaching quantization:  38%|███▊      | 305/812 [00:05<00:09, 53.52it/s]Attaching quantization:  38%|███▊      | 311/812 [00:05<00:09, 54.72it/s]Attaching quantization:  39%|███▉      | 317/812 [00:05<00:09, 53.24it/s]Attaching quantization:  40%|███▉      | 324/812 [00:06<00:09, 54.20it/s]Attaching quantization:  41%|████      | 331/812 [00:06<00:08, 56.52it/s]Attaching quantization:  42%|████▏     | 337/812 [00:06<00:08, 54.46it/s]Attaching quantization:  42%|████▏     | 344/812 [00:06<00:08, 57.80it/s]Attaching quantization:  43%|████▎     | 350/812 [00:06<00:08, 54.71it/s]Attaching quantization:  44%|████▍     | 356/812 [00:06<00:11, 38.99it/s]Attaching quantization:  44%|████▍     | 361/812 [00:06<00:12, 36.13it/s]Attaching quantization:  45%|████▌     | 366/812 [00:07<00:22, 19.48it/s]Attaching quantization:  46%|████▌     | 370/812 [00:08<00:33, 13.21it/s]Attaching quantization:  46%|████▌     | 373/812 [00:08<00:35, 12.34it/s]Attaching quantization:  46%|████▌     | 375/812 [00:08<00:46,  9.35it/s]Attaching quantization:  46%|████▋     | 377/812 [00:09<00:57,  7.60it/s]Attaching quantization:  47%|████▋     | 379/812 [00:09<01:07,  6.42it/s]Attaching quantization:  47%|████▋     | 380/812 [00:10<01:11,  6.02it/s]Attaching quantization:  47%|████▋     | 381/812 [00:10<01:16,  5.62it/s]Attaching quantization:  47%|████▋     | 382/812 [00:10<01:20,  5.35it/s]Attaching quantization:  47%|████▋     | 383/812 [00:10<01:25,  5.03it/s]Attaching quantization:  47%|████▋     | 384/812 [00:11<01:29,  4.78it/s]Attaching quantization:  47%|████▋     | 385/812 [00:11<01:33,  4.59it/s]Attaching quantization:  48%|████▊     | 386/812 [00:11<01:31,  4.64it/s]Attaching quantization:  49%|████▊     | 394/812 [00:11<00:27, 15.25it/s]Attaching quantization:  49%|████▉     | 400/812 [00:11<00:18, 22.16it/s]Attaching quantization:  50%|████▉     | 405/812 [00:11<00:15, 27.13it/s]Attaching quantization:  51%|█████     | 411/812 [00:11<00:12, 33.05it/s]Attaching quantization:  52%|█████▏    | 419/812 [00:12<00:09, 43.03it/s]Attaching quantization:  52%|█████▏    | 425/812 [00:12<00:08, 45.08it/s]Attaching quantization:  53%|█████▎    | 431/812 [00:12<00:09, 42.07it/s]Attaching quantization:  54%|█████▎    | 436/812 [00:12<00:08, 42.77it/s]Attaching quantization:  54%|█████▍    | 441/812 [00:12<00:09, 39.07it/s]Attaching quantization:  55%|█████▌    | 449/812 [00:12<00:07, 47.53it/s]Attaching quantization:  56%|█████▌    | 455/812 [00:12<00:07, 48.33it/s]Attaching quantization:  57%|█████▋    | 461/812 [00:13<00:07, 47.94it/s]Attaching quantization:  58%|█████▊    | 469/812 [00:13<00:06, 54.93it/s]Attaching quantization:  58%|█████▊    | 475/812 [00:13<00:07, 45.97it/s]Attaching quantization:  59%|█████▉    | 481/812 [00:13<00:07, 46.54it/s]Attaching quantization:  60%|██████    | 489/812 [00:13<00:06, 53.45it/s]Attaching quantization:  61%|██████    | 495/812 [00:13<00:06, 49.83it/s]Attaching quantization:  62%|██████▏   | 501/812 [00:13<00:07, 42.84it/s]Attaching quantization:  62%|██████▏   | 507/812 [00:13<00:06, 45.45it/s]Attaching quantization:  63%|██████▎   | 512/812 [00:14<00:06, 45.22it/s]Attaching quantization:  64%|██████▍   | 519/812 [00:14<00:05, 50.65it/s]Attaching quantization:  65%|██████▍   | 525/812 [00:14<00:05, 50.60it/s]Attaching quantization:  65%|██████▌   | 531/812 [00:14<00:06, 41.99it/s]Attaching quantization:  66%|██████▌   | 536/812 [00:14<00:06, 40.77it/s]Attaching quantization:  67%|██████▋   | 541/812 [00:14<00:06, 41.01it/s]Attaching quantization:  67%|██████▋   | 547/812 [00:14<00:05, 45.54it/s]Attaching quantization:  68%|██████▊   | 552/812 [00:15<00:06, 42.12it/s]Attaching quantization:  69%|██████▊   | 558/812 [00:15<00:05, 45.94it/s]Attaching quantization:  69%|██████▉   | 563/812 [00:15<00:05, 43.26it/s]Attaching quantization:  70%|███████   | 570/812 [00:15<00:05, 47.74it/s]Attaching quantization:  71%|███████   | 575/812 [00:15<00:04, 47.94it/s]Attaching quantization:  72%|███████▏  | 581/812 [00:15<00:04, 47.82it/s]Attaching quantization:  73%|███████▎  | 589/812 [00:15<00:04, 55.64it/s]Attaching quantization:  73%|███████▎  | 595/812 [00:15<00:03, 54.45it/s]Attaching quantization:  74%|███████▍  | 601/812 [00:15<00:03, 54.09it/s]Attaching quantization:  75%|███████▌  | 609/812 [00:16<00:03, 59.73it/s]Attaching quantization:  76%|███████▌  | 616/812 [00:16<00:03, 55.55it/s]Attaching quantization:  77%|███████▋  | 622/812 [00:16<00:03, 54.30it/s]Attaching quantization:  78%|███████▊  | 630/812 [00:16<00:03, 56.62it/s]Attaching quantization:  78%|███████▊  | 637/812 [00:16<00:02, 58.41it/s]Attaching quantization:  79%|███████▉  | 643/812 [00:16<00:03, 54.50it/s]Attaching quantization:  80%|████████  | 650/812 [00:16<00:02, 57.08it/s]Attaching quantization:  81%|████████  | 656/812 [00:16<00:02, 56.26it/s]Attaching quantization:  82%|████████▏ | 662/812 [00:17<00:03, 46.89it/s]Attaching quantization:  83%|████████▎ | 670/812 [00:17<00:02, 51.62it/s]Attaching quantization:  83%|████████▎ | 676/812 [00:17<00:02, 53.47it/s]Attaching quantization:  84%|████████▍ | 682/812 [00:17<00:02, 47.24it/s]Attaching quantization:  85%|████████▍ | 688/812 [00:17<00:02, 48.47it/s]Attaching quantization:  85%|████████▌ | 694/812 [00:17<00:02, 43.60it/s]Attaching quantization:  86%|████████▋ | 701/812 [00:17<00:02, 46.38it/s]Attaching quantization:  87%|████████▋ | 709/812 [00:17<00:01, 53.51it/s]Attaching quantization:  88%|████████▊ | 715/812 [00:18<00:01, 50.21it/s]Attaching quantization:  89%|████████▉ | 721/812 [00:18<00:01, 50.58it/s]Attaching quantization:  90%|████████▉ | 729/812 [00:18<00:01, 56.57it/s]Attaching quantization:  91%|█████████ | 735/812 [00:18<00:01, 53.16it/s]Attaching quantization:  91%|█████████▏| 741/812 [00:18<00:01, 52.21it/s]Attaching quantization:  92%|█████████▏| 749/812 [00:18<00:01, 57.91it/s]Attaching quantization:  93%|█████████▎| 755/812 [00:18<00:01, 55.77it/s]Attaching quantization:  94%|█████████▎| 761/812 [00:19<00:01, 48.25it/s]Attaching quantization:  95%|█████████▍| 769/812 [00:19<00:00, 55.09it/s]Attaching quantization:  95%|█████████▌| 775/812 [00:19<00:00, 53.84it/s]Attaching quantization:  96%|█████████▌| 781/812 [00:19<00:00, 52.99it/s]Attaching quantization:  97%|█████████▋| 787/812 [00:19<00:00, 54.11it/s]Attaching quantization:  98%|█████████▊| 793/812 [00:19<00:00, 53.41it/s]Attaching quantization:  99%|█████████▊| 800/812 [00:19<00:00, 55.68it/s]Attaching quantization:  99%|█████████▉| 806/812 [00:19<00:00, 56.68it/s]Attaching quantization: 100%|██████████| 812/812 [00:19<00:00, 55.32it/s]Attaching quantization: 100%|██████████| 812/812 [00:19<00:00, 40.80it/s]
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-`torch_dtype` is deprecated! Use `dtype` instead!
- - quantizing additional layers
-Loading UMT5EncoderModel
-Using ai-toolkit/umt5_xxl_encoder for UMT5 encoder.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 184.51it/s]
-Quantizing UMT5EncoderModel
-Moving transformer back to GPU
-Loading VAE
-Making pipe
-Preparing Model
-create LoRA network. base dim (rank): 64, alpha: 64
-neuron dropout: p=None, rank dropout: p=None, module dropout: p=None
-create LoRA for Text Encoder: 0 modules.
-create LoRA for U-Net: 800 modules.
-enable LoRA for U-Net
-Dataset: /data/kyana-images/dataset
-  -  Preprocessing image dimensions
-  0%|          | 0/756 [00:00<?, ?it/s]100%|██████████| 756/756 [00:00<00:00, 77457.89it/s]
-  -  Found 756 images
-Bucket sizes for /data/kyana-images/dataset:
-1024x1024: 756 files
-1 buckets made
-Caching text_embeddings for /data/kyana-images/dataset
- - Saving text embeddings to disk
-Caching text embeddings to disk:   0%|          | 0/756 [00:00<?, ?it/s]Caching text embeddings to disk: 100%|██████████| 756/756 [00:00<00:00, 37090.38it/s]
-Caching embeddings and unloading text encoder
-
-***** UNLOADING TEXT ENCODER *****
-Embeddings cached to disk. We dont need the text encoder anymore
-***********************************
-
-Generating baseline samples before training
-Generating Images:   0%|          | 0/8 [00:00<?, ?it/s]Unloading vae
-Unloading transformer
-Unloading text encoder
-
-  0%|          | 0/28 [00:00<?, ?it/s][A
-  4%|▎         | 1/28 [00:01<00:50,  1.86s/it][A
-  7%|▋         | 2/28 [00:03<00:46,  1.78s/it][A
- 11%|█         | 3/28 [00:05<00:44,  1.76s/it][A
- 14%|█▍        | 4/28 [00:07<00:41,  1.75s/it][A
- 18%|█▊        | 5/28 [00:08<00:40,  1.74s/it][A
- 21%|██▏       | 6/28 [00:10<00:38,  1.74s/it][A
- 25%|██▌       | 7/28 [00:12<00:36,  1.74s/it][A
- 29%|██▊       | 8/28 [00:14<00:34,  1.74s/it][A
- 32%|███▏      | 9/28 [00:15<00:33,  1.75s/it][A
- 36%|███▌      | 10/28 [00:19<00:40,  2.27s/it][A
- 39%|███▉      | 11/28 [00:20<00:35,  2.11s/it][A
- 43%|████▎     | 12/28 [00:22<00:32,  2.00s/it][A
- 46%|████▋     | 13/28 [00:24<00:28,  1.93s/it][A
- 50%|█████     | 14/28 [00:26<00:26,  1.88s/it][A
- 54%|█████▎    | 15/28 [00:27<00:23,  1.84s/it][A
- 57%|█████▋    | 16/28 [00:29<00:21,  1.82s/it][A
- 61%|██████    | 17/28 [00:31<00:19,  1.80s/it][A
- 64%|██████▍   | 18/28 [00:33<00:17,  1.79s/it][A
- 68%|██████▊   | 19/28 [00:35<00:16,  1.78s/it][A
- 71%|███████▏  | 20/28 [00:36<00:14,  1.77s/it][A
- 75%|███████▌  | 21/28 [00:38<00:12,  1.77s/it][A
- 79%|███████▊  | 22/28 [00:40<00:10,  1.77s/it][A
- 82%|████████▏ | 23/28 [00:42<00:08,  1.77s/it][A
- 86%|████████▌ | 24/28 [00:43<00:07,  1.77s/it][A
- 89%|████████▉ | 25/28 [00:45<00:05,  1.77s/it][A
- 93%|█████████▎| 26/28 [00:47<00:03,  1.76s/it][A
- 96%|█████████▋| 27/28 [00:49<00:01,  1.76s/it][A
-100%|██████████| 28/28 [00:50<00:00,  1.76s/it][A100%|██████████| 28/28 [00:50<00:00,  1.82s/it]
-Generating Images:  12%|█▎        | 1/8 [00:54<06:21, 54.49s/it]Unloading transformer
-Loading Vae
-Unloading vae
-Unloading transformer
-Unloading text encoder
-
-  0%|          | 0/28 [00:00<?, ?it/s][A
-  4%|▎         | 1/28 [00:01<00:49,  1.84s/it][A
-  7%|▋         | 2/28 [00:03<00:46,  1.79s/it][A
- 11%|█         | 3/28 [00:05<00:44,  1.78s/it][A
- 14%|█▍        | 4/28 [00:07<00:42,  1.77s/it][A
- 18%|█▊        | 5/28 [00:08<00:40,  1.77s/it][A
- 21%|██▏       | 6/28 [00:10<00:38,  1.77s/it][A
- 25%|██▌       | 7/28 [00:12<00:37,  1.77s/it][A
- 29%|██▊       | 8/28 [00:14<00:35,  1.77s/it][A
- 32%|███▏      | 9/28 [00:15<00:33,  1.77s/it][A
- 36%|███▌      | 10/28 [00:18<00:37,  2.08s/it][A
- 39%|███▉      | 11/28 [00:20<00:33,  1.98s/it][A
- 43%|████▎     | 12/28 [00:22<00:30,  1.92s/it][A
- 46%|████▋     | 13/28 [00:24<00:28,  1.87s/it][A
- 50%|█████     | 14/28 [00:25<00:25,  1.84s/it][A
- 54%|█████▎    | 15/28 [00:27<00:23,  1.82s/it][A
- 57%|█████▋    | 16/28 [00:29<00:21,  1.80s/it][A
- 61%|██████    | 17/28 [00:31<00:19,  1.79s/it][A
- 64%|██████▍   | 18/28 [00:32<00:17,  1.78s/it][A
- 68%|██████▊   | 19/28 [00:34<00:16,  1.78s/it][A
- 71%|███████▏  | 20/28 [00:36<00:14,  1.77s/it][A
- 75%|███████▌  | 21/28 [00:38<00:12,  1.77s/it][A
- 79%|███████▊  | 22/28 [00:39<00:10,  1.77s/it][A
- 82%|████████▏ | 23/28 [00:41<00:08,  1.77s/it][A
- 86%|████████▌ | 24/28 [00:43<00:07,  1.77s/it][A
- 89%|████████▉ | 25/28 [00:45<00:05,  1.77s/it][A
- 93%|█████████▎| 26/28 [00:46<00:03,  1.77s/it][A
- 96%|█████████▋| 27/28 [00:48<00:01,  1.77s/it][A
-100%|██████████| 28/28 [00:50<00:00,  1.77s/it][A100%|██████████| 28/28 [00:50<00:00,  1.80s/it]
-Generating Images:  25%|██▌       | 2/8 [01:47<05:23, 53.84s/it]Unloading transformer
-Loading Vae
-Unloading vae
-Unloading transformer
-Unloading text encoder
-
-  0%|          | 0/28 [00:00<?, ?it/s][A
-  4%|▎         | 1/28 [00:01<00:49,  1.84s/it][A
-  7%|▋         | 2/28 [00:03<00:46,  1.80s/it][A
- 11%|█         | 3/28 [00:05<00:44,  1.78s/it][A
- 14%|█▍        | 4/28 [00:07<00:42,  1.77s/it][A
- 18%|█▊        | 5/28 [00:08<00:40,  1.77s/it][A
- 21%|██▏       | 6/28 [00:10<00:38,  1.77s/it][A
- 25%|██▌       | 7/28 [00:12<00:37,  1.77s/it][A
- 29%|██▊       | 8/28 [00:14<00:35,  1.77s/it][A
- 32%|███▏      | 9/28 [00:15<00:33,  1.77s/it][A
- 36%|███▌      | 10/28 [00:18<00:37,  2.08s/it][A
- 39%|███▉      | 11/28 [00:20<00:33,  1.98s/it][A
- 43%|████▎     | 12/28 [00:22<00:30,  1.91s/it][A
- 46%|████▋     | 13/28 [00:24<00:28,  1.87s/it][A
- 50%|█████     | 14/28 [00:25<00:25,  1.84s/it][A
- 54%|█████▎    | 15/28 [00:27<00:23,  1.82s/it][A
- 57%|█████▋    | 16/28 [00:29<00:21,  1.80s/it][A
- 61%|██████    | 17/28 [00:31<00:19,  1.79s/it][A
- 64%|██████▍   | 18/28 [00:32<00:17,  1.78s/it][A
- 68%|██████▊   | 19/28 [00:34<00:16,  1.78s/it][A
- 71%|███████▏  | 20/28 [00:36<00:14,  1.77s/it][A
- 75%|███████▌  | 21/28 [00:38<00:12,  1.77s/it][A
- 79%|███████▊  | 22/28 [00:39<00:10,  1.77s/it][A
- 82%|████████▏ | 23/28 [00:41<00:08,  1.77s/it][A
- 86%|████████▌ | 24/28 [00:43<00:07,  1.77s/it][A
- 89%|████████▉ | 25/28 [00:45<00:05,  1.77s/it][A
- 93%|█████████▎| 26/28 [00:46<00:03,  1.77s/it][A
- 96%|█████████▋| 27/28 [00:48<00:01,  1.77s/it][A
-100%|██████████| 28/28 [00:50<00:00,  1.77s/it][A100%|██████████| 28/28 [00:50<00:00,  1.80s/it]
-Generating Images:  38%|███▊      | 3/8 [02:41<04:28, 53.64s/it]Unloading transformer
-Loading Vae
-Unloading vae
-Unloading transformer
-Unloading text encoder
-
-  0%|          | 0/28 [00:00<?, ?it/s][A
-  4%|▎         | 1/28 [00:01<00:49,  1.85s/it][A
-  7%|▋         | 2/28 [00:03<00:46,  1.80s/it][A
- 11%|█         | 3/28 [00:05<00:44,  1.78s/it][A
- 14%|█▍        | 4/28 [00:07<00:42,  1.77s/it][A
- 18%|█▊        | 5/28 [00:08<00:40,  1.77s/it][A
- 21%|██▏       | 6/28 [00:10<00:38,  1.77s/it][A
- 25%|██▌       | 7/28 [00:12<00:37,  1.77s/it][A
- 29%|██▊       | 8/28 [00:14<00:35,  1.77s/it][A
- 32%|███▏      | 9/28 [00:15<00:33,  1.77s/it][A
- 36%|███▌      | 10/28 [00:18<00:37,  2.08s/it][A
- 39%|███▉      | 11/28 [00:20<00:33,  1.98s/it][A
- 43%|████▎     | 12/28 [00:22<00:30,  1.91s/it][A
- 46%|████▋     | 13/28 [00:24<00:28,  1.87s/it][A
- 50%|█████     | 14/28 [00:25<00:25,  1.84s/it][A
- 54%|█████▎    | 15/28 [00:27<00:23,  1.82s/it][A
- 57%|█████▋    | 16/28 [00:29<00:21,  1.80s/it][A
- 61%|██████    | 17/28 [00:31<00:19,  1.79s/it][A
- 64%|██████▍   | 18/28 [00:32<00:17,  1.78s/it][A
- 68%|██████▊   | 19/28 [00:34<00:16,  1.78s/it][A
- 71%|███████▏  | 20/28 [00:36<00:14,  1.77s/it][A
- 75%|███████▌  | 21/28 [00:38<00:12,  1.77s/it][A
- 79%|███████▊  | 22/28 [00:39<00:10,  1.77s/it][A
- 82%|████████▏ | 23/28 [00:41<00:08,  1.77s/it][A
- 86%|████████▌ | 24/28 [00:43<00:07,  1.77s/it][A
- 89%|████████▉ | 25/28 [00:45<00:05,  1.77s/it][A
- 93%|█████████▎| 26/28 [00:46<00:03,  1.77s/it][A
- 96%|█████████▋| 27/28 [00:48<00:01,  1.77s/it][A
-100%|██████████| 28/28 [00:50<00:00,  1.77s/it][A100%|██████████| 28/28 [00:50<00:00,  1.80s/it]
-Generating Images:  50%|█████     | 4/8 [03:34<03:34, 53.55s/it]Unloading transformer
-Loading Vae
-Unloading vae
-Unloading transformer
-Unloading text encoder
-
-  0%|          | 0/28 [00:00<?, ?it/s][A
-  4%|▎         | 1/28 [00:01<00:49,  1.85s/it][A
-  7%|▋         | 2/28 [00:03<00:46,  1.80s/it][A
- 11%|█         | 3/28 [00:05<00:44,  1.78s/it][A
- 14%|█▍        | 4/28 [00:07<00:42,  1.77s/it][A
- 18%|█▊        | 5/28 [00:08<00:40,  1.77s/it][A
- 21%|██▏       | 6/28 [00:10<00:38,  1.77s/it][A
- 25%|██▌       | 7/28 [00:12<00:37,  1.77s/it][A
- 29%|██▊       | 8/28 [00:14<00:35,  1.77s/it][A
- 32%|███▏      | 9/28 [00:15<00:33,  1.77s/it][A
- 36%|███▌      | 10/28 [00:18<00:37,  2.08s/it][A
- 39%|███▉      | 11/28 [00:20<00:33,  1.99s/it][A
- 43%|████▎     | 12/28 [00:22<00:30,  1.92s/it][A
- 46%|████▋     | 13/28 [00:24<00:28,  1.87s/it][A
- 50%|█████     | 14/28 [00:25<00:25,  1.84s/it][A
- 54%|█████▎    | 15/28 [00:27<00:23,  1.82s/it][A
- 57%|█████▋    | 16/28 [00:29<00:21,  1.80s/it][A
- 61%|██████    | 17/28 [00:31<00:19,  1.79s/it][A
- 64%|██████▍   | 18/28 [00:32<00:17,  1.78s/it][A
- 68%|██████▊   | 19/28 [00:34<00:15,  1.78s/it][A
- 71%|███████▏  | 20/28 [00:36<00:14,  1.77s/it][A
- 75%|███████▌  | 21/28 [00:38<00:12,  1.77s/it][A
- 79%|███████▊  | 22/28 [00:39<00:10,  1.77s/it][A
- 82%|████████▏ | 23/28 [00:41<00:08,  1.77s/it][A
- 86%|████████▌ | 24/28 [00:43<00:07,  1.77s/it][A
- 89%|████████▉ | 25/28 [00:45<00:05,  1.77s/it][A
- 93%|█████████▎| 26/28 [00:46<00:03,  1.77s/it][A
- 96%|█████████▋| 27/28 [00:48<00:01,  1.77s/it][A
