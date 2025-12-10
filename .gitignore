@@ -1,5 +1,6 @@
 # Training outputs
 output/
+output
 *.safetensors
 *.ckpt
 *.pt

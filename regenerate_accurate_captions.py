@@ -12,39 +12,41 @@ def generate_accurate_caption(filename):
     name = filename.replace('.png', '').upper()
     
     # Main component identification with precise terminology
-    if 'FULL_ASSEMBLY_FLAT' in name and 'SENSORS_ON' in name:
+    if 'FULL_DEVICE_FLAT' in name and 'SENSORS_ON' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame with textured strap')
-        base_elements.append('biometric sensors active on bottom')
-        base_elements.append('chrome rounded glass sensor contacts with LED indicators')
+        base_elements.append('bottom face showing eight biometric sensors in circular pattern at center of device')
+        base_elements.append('four red LED sensors smaller and four green LED sensors bigger glowing at center')
+        base_elements.append('chrome rounded glass sensor contacts')
         base_elements.append('metal strap attachments visible on both sides')
         base_elements.append('six small flexible sensors visible underneath each strap from ring edge')
-    elif 'FULL_ASSEMBLY_FLAT' in name and 'SENSORS_OFF' in name:
+    elif 'FULL_DEVICE_FLAT' in name and 'SENSORS_OFF' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame with textured strap')
-        base_elements.append('chrome rounded glass sensor contacts on bottom')
+        base_elements.append('bottom face showing eight chrome rounded glass sensor contacts in circular pattern at center')
         base_elements.append('metal strap attachments on both sides')
         base_elements.append('six small flexible sensors underneath each strap from ring edge')
-    elif 'FULL_ASSEMBLY_FLAT' in name:
+    elif 'FULL_DEVICE_FLAT' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame with textured strap')
         base_elements.append('metal strap attachments connecting to ring')
         base_elements.append('six small flexible sensors underneath each strap from ring edge')
-    elif 'FULL_ASSEMBLY_CIRCULAR' in name and 'SENSORS_ON' in name:
+    elif 'FULL_DEVICE_CIRCULAR' in name and 'SENSORS_ON' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame')
         base_elements.append('circular wearable form')
-        base_elements.append('biometric sensors active with LED indicators glowing')
+        base_elements.append('eight biometric sensors in circular pattern at center of bottom face')
+        base_elements.append('four red LEDs smaller four green LEDs bigger glowing')
         base_elements.append('textured strap with metal attachments')
         base_elements.append('six small sensors on each strap from ring edge')
-    elif 'FULL_ASSEMBLY_CIRCULAR' in name and 'SENSORS_OFF' in name:
+    elif 'FULL_DEVICE_CIRCULAR' in name and 'SENSORS_OFF' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame')
         base_elements.append('circular wearable form')
-        base_elements.append('chrome rounded glass sensor contacts visible on bottom')
+        base_elements.append('eight chrome rounded glass sensor contacts in circular pattern at center of bottom face')
         base_elements.append('textured strap with metal attachments')
         base_elements.append('six small sensors on each strap from ring edge')
-    elif 'FULL_ASSEMBLY_CIRCULAR' in name:
+    elif 'FULL_DEVICE_CIRCULAR' in name:
         base_elements.append('kya-na health watch complete wearable unit')
         base_elements.append('core device mounted in ring frame')
         base_elements.append('circular wearable form with textured strap')
@@ -63,7 +65,7 @@ def generate_accurate_caption(filename):
         base_elements.append('textured strap with metal attachments')
         base_elements.append('six small flexible sensors underneath each strap from ring edge')
         base_elements.append('modular extended battery')
-    elif 'CORE_TO_RING_ASSEMBLY' in name:
+    elif 'CORE_TO_RING_ATTACHMENT' in name:
         base_elements.append('kya-na watch showing attachment of core device to ring frame')
         base_elements.append('magnetic connection interface visible')
         base_elements.append('six copper connector pins on ring frame top edge')
@@ -72,14 +74,17 @@ def generate_accurate_caption(filename):
     elif 'CORE_DEVICE_SENSORS_ON' in name:
         base_elements.append('kya-na watch core device standalone')
         base_elements.append('33mm square form factor')
-        base_elements.append('bottom view showing biometric sensors active')
-        base_elements.append('chrome rounded glass sensor contacts with LED indicators')
-        base_elements.append('red and green LED glow visible')
+        base_elements.append('bottom face view with eight chrome biometric sensors in circular pattern at center')
+        base_elements.append('four red LED sensors smaller and four green LED sensors bigger')
+        base_elements.append('sensors arranged in circle at middle of bottom surface')
+        base_elements.append('chrome rounded glass sensor contacts glowing')
+        base_elements.append('opposite side from screen')
     elif 'CORE_DEVICE_ONLY' in name:
         base_elements.append('kya-na watch core device standalone')
         base_elements.append('33mm square form factor')
+        base_elements.append('front face view with LED display screen at top')
         base_elements.append('black matte metallic finish')
-        base_elements.append('LED display screen')
+        base_elements.append('screen on opposite side from biometric sensors')
     elif 'COPPER_PINS_TOP' in name:
         base_elements.append('kya-na watch ring frame detail')
         base_elements.append('six copper connector pins on top edge')
@@ -139,7 +144,7 @@ def generate_accurate_caption(filename):
         base_elements.append('flat strap configuration')
         base_elements.append('metal attachments at strap ends')
         base_elements.append('six small flexible sensors underneath each strap from ring edge')
-        base_elements.append('wearable assembly without core device')
+        base_elements.append('wearable device without core device')
     else:
         base_elements.append('kya-na health watch')
         base_elements.append('product detail shot')
@@ -212,7 +217,7 @@ def regenerate_all_captions(dataset_dir):
     print("- Strap: Textured silicon (not plain)")
     print("- Strap attachments: Metal pieces at strap ends connecting to ring")
     print("- Strap sensors: 6 small flexible sensors UNDERNEATH each strap from ring edge")
-    print("- Assembly images: Show attachment logic of core+ring OR core+powerbank only")
+    print("- Device images: Show attachment logic of core+ring OR core+powerbank only")
     print("- No hallucinated details - only what's actually visible")
 
 if __name__ == '__main__':
