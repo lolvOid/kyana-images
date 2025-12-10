@@ -55,7 +55,6 @@ Thumbs.db
 desktop.ini
 
 # Large files
-*.mp4
 *.avi
 *.mov
 *.mkv
