@@ -1,0 +1,27 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "image_spec": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "latents_idx": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "caption": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "caption_number": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

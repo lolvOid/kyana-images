@@ -1,0 +1,102 @@
+job: extension
+config:
+  name: kyana_watch_flux_lora
+  process:
+  - type: sd_trainer
+    training_folder: /data/kyana-images/output_flux
+    device: cuda:0
+    trigger_word: kya-na
+    network:
+      type: lora
+      linear: 64
+      linear_alpha: 64
+    save:
+      dtype: float16
+      save_every: 250
+      max_step_saves_to_keep: 4
+    datasets:
+    - folder_path: /data/kyana-images/dataset
+      caption_ext: txt
+      caption_dropout_rate: 0.03
+      shuffle_tokens: false
+      resolution:
+      - 1024
+      - 1024
+    train:
+      batch_size: 1
+      steps: 4000
+      gradient_accumulation: 4
+      train_unet: true
+      train_text_encoder: false
+      gradient_checkpointing: true
+      noise_scheduler: flowmatch
+      optimizer: adamw8bit
+      lr: 8.0e-05
+      lr_scheduler: cosine
+      optimizer_params:
+        weight_decay: 5.0e-05
+      dtype: bf16
+      cache_text_embeddings: true
+      ema_config:
+        use_ema: true
+        ema_decay: 0.995
+    model:
+      name_or_path: black-forest-labs/FLUX.1-dev
+      is_flux: true
+      quantize: true
+      qtype: uint4|ostris/accuracy_recovery_adapters/flux_1_dev_torchao_uint4.safetensors
+      quantize_te: true
+      qtype_te: qfloat8
+      low_vram: true
+    sample:
+      sampler: flowmatch
+      sample_every: 250
+      width: 1024
+      height: 1024
+      prompts:
+      - kya-na health watch complete wearable unit, core device mounted in ring frame
+        with textured strap, metal strap attachments visible, six small flexible sensors
+        underneath each strap from ring edge, black metallic matte finish, professional
+        product photography, white background
+      - kya-na watch core device standalone, 33mm square form factor, chrome rounded
+        glass biometric sensors on bottom, black matte metallic finish, LED display
+        screen, professional product photography, white background
+      - kya-na watch ring frame detail, six copper connector pins on top edge, pins
+        arranged on left right and middle sections, golden metallic contact pins,
+        precision electrical connection points, technical closeup, white background
+      - kya-na health watch complete wearable unit, biometric sensors active, chrome
+        rounded glass sensor contacts with LED indicators, red and green LED glow
+        visible, six small flexible sensors underneath each strap, professional product
+        shot, white background
+      - kya-na watch side profile detail, physical button and speaker grille, precision
+        engineering closeup, matte black finish, professional product photography,
+        white background
+      - kya-na watch strap clasp mechanism, secure fastening system detail, textured
+        silicon strap material, metal strap attachments visible, six small flexible
+        sensors underneath each strap from ring edge, buckle closure design, professional
+        product photography, white background
+      - kya-na watch LED display screen, health metrics interface closeup, modern
+        UI display, premium smartwatch screen, technical detail, white background
+      - kya-na watch ring frame with textured strap, flat strap configuration, metal
+        attachments at strap ends, six small flexible sensors underneath each strap
+        from ring edge, white background
+      - kya-na watch showing attachment of core device to ring frame, magnetic connection
+        interface visible, six copper pins on ring frame arranged left right middle,
+        attachment logic demonstration, white background
+      - kya-na health watch with powerbank module, powerbank attached to core device,
+        textured strap with metal attachments, six small flexible sensors underneath
+        each strap from ring edge, extended battery system, professional product photography,
+        white background
+      neg: blurry, low quality, distorted, deformed, unrealistic, watermark, text,
+        motion blur, animation, rotation, floating parts, wrong design, glossy strap,
+        round watch, incorrect sensor count, wrong pin count, leather strap, generic
+        smartwatch, apple watch, incorrect components, misaligned parts
+      seed: 42
+      walk_seed: true
+      guidance_scale: 3.5
+      sample_steps: 20
+meta:
+  name: Kya-na Health Watch FLUX LoRA
+  version: '1.0'
+  description: High-precision FLUX LoRA for Kya-na product photography with accurate
+    technical details
