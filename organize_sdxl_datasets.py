@@ -20,11 +20,11 @@ OUTPUT_BASE = Path("/data/kyana-images/datasets")
 # Category definitions: (category_name, [prefixes], token)
 # Note: AI-Toolkit expects images and captions in the same folder
 CATEGORIES = [
-    ("device_core", ["FULL_DEVICE", "CORE_DEVICE"], "<devX>"),
+    ("device_core", ["FULL_DEVICE", "CORE_DEVICE", "BUTTON_SPEAKER", "DISPLAY_SCREEN"], "<devX>"),
     ("strap", ["STRAP", "RING_STRAP"], "<strapX>"),
     ("clasp", ["CLASP"], "<claspX>"),
     ("powerbank", ["POWERBANK", "FULL_WITH_POWERBANK"], "<powerX>"),
-    ("internal_details", ["MAGNETIC", "COPPER_PINS"], "<internalX>"),
+    ("ring_frame", ["MAGNETIC", "COPPER_PINS", "CORE_TO_RING_ATTACHMENT", "RING_FRAME_MAGNETIC", "RING_FRAME_PINS", "RING_FRAME_ATTACHMENT"], "<ringX>"),
 ]
 
 def get_file_category(filename):

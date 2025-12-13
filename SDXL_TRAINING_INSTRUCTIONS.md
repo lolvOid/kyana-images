@@ -27,7 +27,7 @@ python3 organize_sdxl_datasets.py
    - `STRAP*` or `RING_STRAP*` → `strap`
    - `CLASP*` → `clasp`
    - `POWERBANK*` or `FULL_WITH_POWERBANK*` → `powerbank`
-   - `MAGNETIC*` or `COPPER_PINS*` → `internal_details`
+   - `MAGNETIC*`, `COPPER_PINS*`, or `CORE_TO_RING_ATTACHMENT*` → `ring_frame`
 4. Creates organized folder structure at `/data/kyana-images/datasets/`
 5. Copies files to appropriate `images/` and `captions/` subfolders
 6. Automatically injects tokens at the start of captions:
@@ -35,7 +35,7 @@ python3 organize_sdxl_datasets.py
    - `<strapX>` for strap
    - `<claspX>` for clasp
    - `<powerX>` for powerbank
-   - `<internalX>` for internal_details
+   - `<ringX>` for ring_frame
 
 ### Verify Organization
 
@@ -46,7 +46,7 @@ After running the script, verify the organization:
 ls -la /data/kyana-images/datasets/
 
 # Count files in each category
-for dir in device_core strap clasp powerbank internal_details; do
+for dir in device_core strap clasp powerbank ring_frame; do
     echo "$dir:"
     echo "  Images: $(ls /data/kyana-images/datasets/$dir/images/*.png 2>/dev/null | wc -l)"
     echo "  Captions: $(ls /data/kyana-images/datasets/$dir/captions/*.txt 2>/dev/null | wc -l)"
@@ -65,7 +65,7 @@ All 5 training configs are ready:
 - `train_sdxl_strap_lora.yaml`
 - `train_sdxl_clasp_lora.yaml`
 - `train_sdxl_powerbank_lora.yaml`
-- `train_sdxl_internal_details_lora.yaml`
+- `train_sdxl_ring_frame_lora.yaml`
 
 ### Config Settings Summary
 
@@ -106,7 +106,7 @@ ai-toolkit train train_sdxl_clasp_lora.yaml
 ai-toolkit train train_sdxl_powerbank_lora.yaml
 
 # Internal Details LoRA
-ai-toolkit train train_sdxl_internal_details_lora.yaml
+ai-toolkit train train_sdxl_ring_frame_lora.yaml
 ```
 
 ### Training Output
@@ -125,7 +125,7 @@ Trained LoRAs will be saved to:
     ...
   powerbank_lora/
     ...
-  internal_details_lora/
+  ring_frame_lora/
     ...
 ```
 
@@ -163,7 +163,7 @@ After training, you can combine multiple LoRAs during inference. In your inferen
 - Use `<strapX>` when generating strap or ring frame images
 - Use `<claspX>` when generating clasp mechanism images
 - Use `<powerX>` when generating powerbank images
-- Use `<internalX>` when generating internal detail images
+- Use `<ringX>` when generating ring frame images
 - Combine multiple tokens when generating composite images
 
 ## Resource Requirements

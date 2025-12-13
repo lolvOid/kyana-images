@@ -104,28 +104,28 @@ This document provides corrected caption examples for each LoRA category. These 
 <powerX> kya-na watch powerbank attachment interface, modular connection system, powerbank mounted to core device, attachment mechanism visible, black metallic matte finish, professional product photography, white background
 ```
 
-## internal_details
+## ring_frame
 
-### Copper Pins
-
-```
-<internalX> kya-na watch ring frame detail, six copper connector pins on top edge, golden metallic contact pins, pins arranged on left, right, and middle sections, precision electrical connection points, technical closeup, black metallic matte finish, professional product photography, white background
-```
+### Ring Frame with Copper Pins
 
 ```
-<internalX> kya-na watch copper pins detail, six connector pins on ring frame top edge, golden metallic contact pins, electrical connection interface, precision engineering, technical closeup, black metallic matte finish, professional product photography, white background
+<ringX> kya-na watch ring frame, outer ring structure, six copper connector pins on top edge, golden metallic contact pins, pins arranged on left, right, and middle sections, precision electrical connection points, technical closeup, black metallic matte finish, professional product photography, white background
 ```
 
-### Magnetic Connectors
-
 ```
-<internalX> kya-na watch internal magnetic connectors, mounting interface detail, precision connection system, magnetic attachment mechanism visible, black metallic matte finish, professional product photography, white background
+<ringX> kya-na watch ring frame detail, outer ring component, six connector pins on ring frame top edge, golden metallic contact pins, electrical connection interface, precision engineering, technical closeup, black metallic matte finish, professional product photography, white background
 ```
 
-### Attachment Interface
+### Ring Frame with Magnetic Connectors
 
 ```
-<internalX> kya-na watch showing attachment of core device to ring frame, magnetic connection interface visible, six copper connector pins on ring frame top edge, pins arranged on left, right, and middle sections, attachment logic demonstration, black metallic matte finish, professional product photography, white background
+<ringX> kya-na watch ring frame with magnetic connectors, mounting interface detail, precision connection system, magnetic attachment mechanism visible, ring frame structure, black metallic matte finish, professional product photography, white background
+```
+
+### Ring Frame Attachment Interface
+
+```
+<ringX> kya-na watch showing attachment of core device to ring frame, magnetic connection interface visible, six copper connector pins on ring frame top edge, pins arranged on left, right, and middle sections, ring frame outer structure, attachment logic demonstration, black metallic matte finish, professional product photography, white background
 ```
 
 ## Caption Guidelines
@@ -138,7 +138,7 @@ This document provides corrected caption examples for each LoRA category. These 
 ### Factual Consistency
 - Core device: Always "33mm square form factor"
 - Biometric sensors: Always "eight chrome sensors in circular pattern, four red LED sensors smaller, four green LED sensors bigger"
-- Copper pins: Always "six copper connector pins on top edge, pins arranged on left, right, and middle sections"
+- Ring frame copper pins: Always "six copper connector pins on ring frame top edge, pins arranged on left, right, and middle sections"
 - Strap sensors: Always "six small flexible sensors underneath each strap from ring edge"
 - Finish: Always "black metallic matte finish" or "black matte metallic finish"
 
