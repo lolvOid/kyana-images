@@ -1,0 +1,66 @@
+job: extension
+config:
+  name: powerbank_lora
+  process:
+    - type: sd_trainer
+      training_folder: /data/kyana-images/output_sdxl
+      device: cuda:0
+      trigger_word: "<powerX>"
+      
+      network:
+        type: lora
+        linear: 32
+        linear_alpha: 32
+      
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 7
+      
+      datasets:
+        - folder_path: /data/kyana-images/datasets/powerbank
+          caption_ext: txt
+          caption_dropout_rate: 0.03
+          shuffle_tokens: false
+          resolution: [1024, 1024]
+      
+      train:
+        batch_size: 1
+        steps: 3500
+        gradient_accumulation: 4
+        train_unet: true
+        train_text_encoder: true
+        gradient_checkpointing: true
+        optimizer: adamw
+        lr: 1e-4
+        text_encoder_lr: 5e-5
+        lr_scheduler: cosine
+        optimizer_params:
+          weight_decay: 5e-5
+        dtype: fp16
+        cache_text_embeddings: true
+      
+      model:
+        name_or_path: "stabilityai/stable-diffusion-xl-base-1.0"
+      
+      sample:
+        sampler: euler
+        sample_every: 500
+        width: 1024
+        height: 1024
+        prompts:
+          - "<powerX> kya-na watch powerbank module standalone, auxiliary battery component, modular power accessory, black metallic matte finish, professional product photography, white background"
+          - "<powerX> kya-na health watch with powerbank module, powerbank attached to core device, textured strap with metal attachments, six small flexible sensors underneath each strap from ring edge, extended battery system, black metallic matte finish, professional product photography, white background"
+          - "<powerX> kya-na watch powerbank attachment interface, modular connection system, powerbank mounted to core device, attachment mechanism visible, black metallic matte finish, professional product photography, white background"
+          - "<powerX> kya-na watch complete unit with powerbank, powerbank module attached, extended battery configuration, core device with powerbank, textured strap, six small flexible sensors underneath each strap, black metallic matte finish, professional product photography, white background"
+        neg: "low quality, blurry, distorted, watermark, text, wrong product, generic smartwatch, incorrect sensor count, misaligned parts, floating components, hallucinated features, wrong powerbank design, incorrect attachment mechanism"
+        seed: 42
+        walk_seed: true
+        guidance_scale: 7.0
+        sample_steps: 50
+
+meta:
+  name: "Kya-na Powerbank SDXL LoRA"
+  version: '1.0'
+  description: "SDXL LoRA for kya-na health watch powerbank module - focuses on standalone powerbank, attachment interface, and complete unit with powerbank"
+

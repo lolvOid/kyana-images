@@ -1,0 +1,79 @@
+job: extension
+config:
+  name: kyana_watch_wan22_lora_precision
+  process:
+    - type: sd_trainer
+      training_folder: /data/kyana-images/output_wan22
+      device: cuda:0
+      trigger_word: "kya-na Health smartwatch"
+      
+      network:
+        type: lora
+        linear: 64
+        linear_alpha: 64
+      
+      save:
+        dtype: float16
+        save_every: 100
+        max_step_saves_to_keep: 15
+      
+      datasets:
+        - folder_path: /data/kyana-images/dataset_videos/videos
+          caption_ext: txt
+          caption_dropout_rate: 0.03
+          shuffle_tokens: false
+          num_frames: 21
+          resolution: [1024]
+      
+      train:
+        batch_size: 1
+        steps: 2500
+        gradient_accumulation: 4
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        optimizer: adamw8bit
+        lr: 8e-05
+        lr_scheduler: cosine
+        optimizer_params:
+          weight_decay: 5e-5
+        dtype: bf16
+        cache_text_embeddings: true
+      
+      model:
+        name_or_path: "ai-toolkit/Wan2.2-T2V-A14B-Diffusers-bf16"
+        arch: wan22_14b
+        quantize: true
+        qtype: "uint4|ostris/accuracy_recovery_adapters/wan22_14b_t2i_torchao_uint4.safetensors"
+        quantize_te: true
+        qtype_te: "qfloat8"
+        model_kwargs:
+          train_high_noise: true
+          train_low_noise: true
+      
+      sample:
+        sampler: euler
+        sample_every: 100
+        width: 1024
+        height: 1024
+        num_frames: 21
+        prompts:
+          - "kya-na Health smartwatch complete wearable unit, core device mounted in ring frame with textured strap, metal strap attachments visible, six small flexible sensors underneath each strap from ring edge, professional product photography, white background"
+          - "kya-na Health smartwatch core device standalone, 33mm square form factor, bottom face view with eight chrome biometric sensors in circular pattern at center, four red LED sensors smaller and four green LED sensors bigger, sensors arranged in circle at middle of bottom surface, chrome rounded glass sensor contacts glowing, opposite side from screen"
+          - "kya-na Health smartwatch ring frame detail, six copper connector pins on top edge, pins arranged on left right and middle sections, golden metallic contact pins, precision electrical connection points, technical closeup, white background"
+          - "kya-na Health smartwatch complete wearable unit, biometric sensors active, chrome rounded glass sensor contacts with LED indicators, red and green LED glow visible, six small flexible sensors underneath each strap, professional product shot, white background"
+          - "kya-na Health smartwatch showing attachment of core device to ring frame, magnetic connection interface visible, six copper connector pins on ring frame top edge, pins arranged on left, right, and middle sections, attachment logic demonstration, white background"
+          - "kya-na Health smartwatch with powerbank module, powerbank attached to core device, textured strap with metal attachments, six small flexible sensors underneath each strap from ring edge, extended battery system, professional product photography, white background"
+          - "kya-na Health smartwatch strap clasp mechanism, secure fastening system detail, textured silicon strap material, metal strap attachments visible, six small flexible sensors underneath each strap from ring edge, buckle closure design, professional product photography, white background"
+          - "kya-na Health smartwatch watch side profile detail, physical button and speaker grille, precision engineering closeup, matte black finish, professional product photography, white background"
+        neg: "low quality, blurry, distorted, watermark, text, wrong product, generic smartwatch, incorrect sensor count, wrong pin count, misaligned parts, floating components, hallucinated features, wrong number of sensors, incorrect component placement"
+        seed: 42
+        walk_seed: true
+        guidance_scale: 7.0
+        sample_steps: 50
+
+meta:
+  name: "Kya-na Health Watch Wan2.2 LoRA Precision (Quantized)"
+  version: '4.0'
+  description: "Quantized Wan2.2 LoRA for health device marketing with accuracy recovery adapters - optimized for memory efficiency while maintaining precision"
+
