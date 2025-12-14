@@ -29,11 +29,10 @@ config:
         steps: 3500
         gradient_accumulation: 4
         train_unet: true
-        train_text_encoder: true
+        train_text_encoder: false
         gradient_checkpointing: true
         optimizer: adamw
         lr: 1e-4
-        text_encoder_lr: 5e-5
         lr_scheduler: cosine
         optimizer_params:
           weight_decay: 5e-5
